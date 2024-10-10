@@ -8,28 +8,9 @@ export const metadata = {
 };
 
 export default async function Home() {
-  // const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tokens`);
-  // const tokens = await response.json();
-  const tokens =[
-    {
-        name: "ExampleToken1",
-        symbol: "EXT1",
-        decimals: 18,
-        token_address: "0x1234567890abcdef1234567890abcdef12345678",
-        deployed_by: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
-        properties: {
-            meta: {
-                description: "Description for ExampleToken1",
-                image: "QmYi4RecDM2Z4eTNXNaNeriWd4enupBZSnUkCujaFK6qWH",
-                external_url: "https://example.com/token/1",
-                launchTime: "2024-09-23T16:22:29.191Z",
-                social_media: {
-                    telegram: "https://t.me/example1",
-                    twitter: "https://x.com/example1"
-                }
-            }
-        }
-    },]
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tokens`);
+  const tokens = await response.json();
+
   return (
     <main className=" w-full pt-20 pl-16 font-[family-name:var(--font-geist-sans)]">
 <div className=" w-full">

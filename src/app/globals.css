@@ -3,16 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #111111;
+  --foreground: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
 
 body {
   color: var(--foreground);
@@ -20,6 +15,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.font-beat {
+  font-family: var(--font-beat-word);
+}
+.border-imageNav {
+  border-image: linear-gradient(180deg, #48A7FF, #5E6EFF) 6;
+}
+
+.borderGradient {
+  border: 1.76px solid;
+  border-image-source: linear-gradient(207.43deg, #cfe8ff66 0.85%, #ffffff00 32.31%);
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;

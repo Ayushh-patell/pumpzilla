@@ -37,11 +37,11 @@ const HomeNav = () => {
     <nav className=" flex justify-center flex-col items-center gap-6 w-full relative">
     <div onClick={()=>{setcurrNav(0);router.push('/')}} className={` h-8 w-full flex justify-center items-center relative`}>
         <Image src={'/Home.png'} width={30} height={30} className={` size-5 ${currNav===1?" opacity-100":" opacity-0"} transition-all duration-200 `} alt="Home"/>
-        <Image src={'/Home-active.png'} width={30} height={30} className={` size-5 absolute z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 ${currNav===0?" opacity-100":" opacity-0"} transition-all duration-200 `} alt="Home"/>
+        <Image src={'/home-active.png'} width={30} height={30} className={` size-5 absolute z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 ${currNav===0?" opacity-100":" opacity-0"} transition-all duration-200 `} alt="Home"/>
     </div>
     <div onClick={()=>{setcurrNav(1);router.push('/?launch=true')}} className={` h-8 w-full flex justify-center items-center relative`}>
         <Image src={'/Launch.png'} width={30} height={30} className={` size-5 ${currNav===0?" opacity-100":" opacity-0"} transition-all duration-200  `} alt="Launch"/>
-        <Image src={'/Launch-active.png'} width={30} height={30} className={` size-5 absolute z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 ${currNav===1?" opacity-100":" opacity-0"} transition-all duration-200 `} alt="Launch"/>
+        <Image src={'/launch-active.png'} width={30} height={30} className={` size-5 absolute z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 ${currNav===1?" opacity-100":" opacity-0"} transition-all duration-200 `} alt="Launch"/>
     </div>
     <div className={` h-8 w-full flex justify-center items-center`}>
         <Image src={'/twitter.png'} width={30} height={30} className=" size-5" alt="Twitter"/>

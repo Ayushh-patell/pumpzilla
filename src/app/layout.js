@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import {Bebas_Neue, Montserrat} from 'next/font/google'
 import Image from "next/image";
-import HomeNav from "./components/HomeNav";
+import { HomeNavWrapper } from "./components/HomeNav";
 
 
 const geistSans = localFont({
@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
       </header>
 
       <aside className=" fixed z-40 top-0 left-0 h-dvh w-16 pt-40 pb-4 bg-darkPry flex justify-center items-center">
-        <HomeNav/>
+        <HomeNavWrapper/>
       </aside>
         {children}
       </body>

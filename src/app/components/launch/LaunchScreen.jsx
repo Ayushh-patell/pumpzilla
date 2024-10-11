@@ -1,7 +1,8 @@
 "use client";
 
-import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
+import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import LeftBGImg from './LeftBGImg';
 import RightBGImg from './RightBGImg';
@@ -102,9 +103,9 @@ const LaunchScreen = () => {
   );
 };
 
-export default function LaunchPageWrapper() {
+export function LaunchPageWrapper() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense>
       <LaunchScreen />
     </Suspense>
   );

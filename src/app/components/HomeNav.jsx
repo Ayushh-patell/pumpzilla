@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { Suspense } from 'react';
 
 const HomeNav = () => {
     const router = useRouter();
@@ -56,4 +57,10 @@ const HomeNav = () => {
   )
 }
 
-export default HomeNav
+export function HomeNavWrapper () {
+    return (
+        <Suspense>
+            <HomeNav/>
+        </Suspense>
+    )
+}

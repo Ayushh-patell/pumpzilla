@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ScreenHome from "./components/home/ScreenHome";
-import LaunchPageWrapper from "./components/launch/LaunchScreen";
+import { LaunchPageWrapper } from "./components/launch/LaunchScreen";
 
 
 export const metadata = {

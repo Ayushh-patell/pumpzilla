@@ -1,9 +1,7 @@
 import React from 'react'
 import TokenGridItem from './TokenGridItem'
 
-const TokenGrid = ({tokens}) => {
-  console.log(tokens);
-  
+const TokenGrid = ({tokens}) => {  
   return (
     <div className=" grid grid-cols-4 gap-4 p-8">
     {tokens && tokens.map((data, i) => (

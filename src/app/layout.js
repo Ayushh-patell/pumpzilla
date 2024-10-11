@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import {Bebas_Neue, Montserrat} from 'next/font/google'
 import Image from "next/image";
+import HomeNav from "./components/HomeNav";
 
 
 const geistSans = localFont({
@@ -19,6 +20,11 @@ const beatWord = localFont({
   variable:'--font-beat-word',
   weight:'100 900',
 });
+const cheese = localFont({
+  src:'./fonts/CHEESEBURGA demo.ttf',
+  variable:'--font-cheese-burga',
+  weight:'100 900',
+});
 
 
 export const mont = Montserrat({subsets:['cyrillic'], adjustFontFallback:false, display:'swap'})
@@ -28,9 +34,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${beatWord.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${beatWord.variable} ${cheese.variable} antialiased`}
       >
-            <header className=' fixed top-0 left-0 w-full z-20 flex justify-between items-center px-4 py-3 bg-darkPry'>
+            <header className=' fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 py-3 bg-darkPry'>
       {/* LOGO */}
         <div className=" flex justify-center items-end">
           <Image src={'/Logo.png'} alt="Logo" className=" h-14 w-auto" width={100} height={100}/>
@@ -49,12 +55,8 @@ export default function RootLayout({ children }) {
         <button className=" font-beat bg-gradient-to-r from-bluePry to-purplePry rounded-xl text-lg px-4 py-2 text-white">CONNECT WALLET</button>
       </header>
 
-      <aside className=" fixed z-10 top-0 left-0 h-dvh w-16 pt-40 pb-4 bg-darkPry flex justify-center items-center">
-        <nav className=" flex justify-center flex-col items-center gap-6 w-full">
-          <div className=" h-8 w-full border-r-4 border-imageNav"></div>
-          <div className=" h-8 w-full border-r-4 border-imageNav"></div>
-          <div className=" h-8 w-full border-r-4 border-imageNav"></div>
-        </nav>
+      <aside className=" fixed z-40 top-0 left-0 h-dvh w-16 pt-40 pb-4 bg-darkPry flex justify-center items-center">
+        <HomeNav/>
       </aside>
         {children}
       </body>

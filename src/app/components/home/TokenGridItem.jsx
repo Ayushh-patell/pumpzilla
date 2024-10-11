@@ -51,7 +51,7 @@ border-image-source: linear-gradient(101.44deg, rgba(255, 255, 255, 0) 35.73%, #
 
  */}
 {/* TOP PERCENTAGE */}
-<div className={` text-white absolute z-20 top-0 left-0 bg-gradient-to-l from-bluePry to-[#5E6EFF] rounded-br-3xl px-8 py-1 text-lg ${bebas.className}`}>
+<div className={` text-white absolute z-20 top-0 left-0 bg-gradient-to-l from-bluePry to-[#5E6EFF] rounded-br-3xl px-8 py-1 text-lg ${bebas.className}`} style={{boxShadow:'5px 5px 10px rgba(0,0,0,0.3)'}}>
   +9%
 </div>
 

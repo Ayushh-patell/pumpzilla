@@ -1,0 +1,117 @@
+"use client";
+import gsap from 'gsap';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react'
+import LeftBGImg from './LeftBGImg';
+import RightBGImg from './RightBGImg';
+import Image from 'next/image';
+import LaunchInput from './LaunchInput';
+import LaunchTextArea from './LaunchTextArea';
+import { Montserrat } from 'next/font/google';
+// import { mont } from '@/app/layout';
+
+let timeOut;
+const mont = Montserrat({subsets:['cyrillic']})
+
+const LaunchScreen = () => {
+    const searchParams = useSearchParams();
+    const [formValue, setformValue] = useState({
+        name:"",
+        symbol:"",
+        description:"",
+        website:"",
+        telegram:"",
+        twitter:"",
+        initialBuy:""
+    })
+    const changeFormValue = (name, value) => {
+        let key = name==='TOKEN NAME'?"name":name==='TOKEN SYMBOL'?"symbol":name==='TOKEN DESCRIPTION'?"description":name==='WEBSITE'?"website":name==='TELEGRAM'?"telegram":name==='TWITTER'?"twitter":"initialBuy";
+        let newVal = {...formValue};
+        newVal[key] = value;
+        setformValue(newVal)
+    }
+
+    const DebounceChange = (key, value) => {
+        clearTimeout(timeOut);
+        setTimeout(() => {
+            changeFormValue(key, value)
+        }, 800);
+    }
+
+    useEffect(() => {
+      if (searchParams.get('launch') === "true") {
+        gsap.set('#LaunchScreen', {pointerEvents:"all", display:"flex"});
+        gsap.to('#LaunchScreen', {opacity:1});
+        gsap.to('#HomeScreen', {opacity:0});
+        gsap.set('#HomeScreen', {pointerEvents:"none", delay:0.3, display:'none'});
+      }
+      else {
+          gsap.set('#HomeScreen', {pointerEvents:"all", display:'block'});
+          gsap.to('#HomeScreen', {opacity:1});
+          gsap.to('#LaunchScreen', {opacity:0});
+          gsap.set('#LaunchScreen', {pointerEvents:"none", delay:0.2, display:"none"});
+      }
+
+    }, [searchParams])
+    
+
+  return (
+    <div id="LaunchScreen" className=" absolute z-10 pt-20 pl-16 top-0 left-0 hidden pointer-events-none opacity-0 w-full h-dvh">
+      <LeftBGImg/>
+      <RightBGImg/>
+
+      {/* FORMS */}
+      <div className=" flex relative z-10 p-4 w-full h-full gap-4 justify-between items-center">
+
+            <div className=" w-2/5 h-full flex pl-10 justify-start items-center">
+             
+                <div className=" rounded-3xl overflow-hidden relative w-4/5 h-3/4 bg-blackPry">
+                <div className=" flex justify-center items-center gap-4 flex-col w-full h-full p-8 relative z-10">
+                {/* PROFILE IMAGE */}
+                    <div className=" w-1/2 aspect-square rounded-full p-3 flex justify-center items-center relative bg-gradient-to-bl from-[#5E6EFF] to-[#B910BC]">
+                        <Image src={'/profile.png'} alt=" profile" width={100} height={100} className=" w-full h-full object-contain object-center"/>
+                        {/* EDIT BUTTON */}
+                        <button className=" absolute bottom-0 right-0 flex justify-center items-center p-2 rounded-2xl border-4 border-blackPry bg-gradient-to-b from-bluePry to-[#5E6EFF]">
+                            <Image src={'/pencil.png'} alt="edit" width={40} height={40} className=" size-7"/>
+                        </button>
+                    </div>
+
+                {/* TOKEN NAME */}
+                <LaunchInput DebounceChange={DebounceChange} bgClr={'#1B1C1E'} font={'beat'} name={'TOKEN NAME'} required={true} type={'text'}/>
+                {/* TOKEN SYMBOL */}
+                <LaunchInput DebounceChange={DebounceChange} bgClr={'#1B1C1E'} font={'beat'} name={'TOKEN SYMBOL'} required={true} type={'text'}/>
+                </div>
+
+                {/* BACKGROUND IMAGE */}
+                <Image src={"/form bg.png"} alt="bg" aria-hidden width={200} height={300} className=" pointer-events-none w-full h-full absolute top-0 left-0 z-0 object-cover object-center mix-blend-color-dodge" />
+                </div>
+            </div>
+            <div className=" w-1/2 h-full flex justify-end items-center px-14 py-10">
+                <div className=" w-full h-full">
+                    <h4 className={`${mont.className} font-black text-white text-4xl w-full text-center`}>LAUNCH YOUR TOKEN !</h4>
+                    <p className={` bg-gradient-to-r from-[#4EA5FF] to-[#B972FF] bg-clip-text text-transparent ${mont.className} font-medium py-2 text-center`}>No presale, No Team Allocation, Lower Gas</p>
+
+                    <LaunchTextArea DebounceChange={DebounceChange} bgClr={'#111111'} font={'bebas'} name={'TOKEN DESCRIPTION'} required={false} type={'text'}/>
+
+                    <LaunchInput DebounceChange={DebounceChange} bgClr={'#111111'} font={'bebas'} name={'WEBSITE'} required={false} type={'text'}/>
+
+                    <div className=" flex w-full justify-center items-center gap-2">
+                    <LaunchInput DebounceChange={DebounceChange} bgClr={'#111111'} font={'bebas'} name={'TELEGRAM'} required={false} type={'text'}/>
+
+                    <LaunchInput DebounceChange={DebounceChange} bgClr={'#111111'} font={'bebas'} name={'TWITTER'} required={false} type={'text'}/>
+                    </div>
+
+                    <LaunchInput DebounceChange={DebounceChange} bgClr={'#111111'} font={'bebas'} name={'INITIAL BUY'} required={false} type={'text'}/>
+
+                    <div className=" w-full flex justify-center my-3 items-center">
+                    <button className="font-cheese py-2 px-10 text-4xl mx-auto rounded-xl text-white bg-gradient-to-r from-[#FF4672] to-[#B972FF]" style={{boxShadow:'5px 5px 10px rgba(0,0,0,0.3)'}}>LAUNCH</button>
+                    </div>
+                </div>
+            </div>
+
+      </div>
+    </div>
+  )
+}
+
+export default LaunchScreen

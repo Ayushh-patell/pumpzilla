@@ -7,17 +7,21 @@ const TokenFilter = ({tokenFilters, settokenFilters}) => {
     let newFilter = {...tokenFilters};
     newFilter.primaryFilter = filter;
     {/* 0.2, 7.9, 15.65, 22.15 */}
+    let ValArr = Array.from(document.querySelectorAll('.homepageFilterBtn')).map((el) => {
+      let vals = el.getBoundingClientRect();      
+      return {left:vals.x, width:vals.width}
+    })
     if(filter==="LaunchedT") {
-      gsap.to('#FilterBottomBar', {left:'0.2%', width:'7rem'})
+      gsap.to('#FilterBottomBar', {left:`${ValArr[0].left-70}px`, width:`${ValArr[0].width+10}px`})
     }
     if(filter==="TradingV") {
-      gsap.to('#FilterBottomBar', {left:'7.9%', width:'7rem'})
+      gsap.to('#FilterBottomBar', {left:`${ValArr[1].left-70}px`, width:`${ValArr[1].width+10}px`})
     }
     if(filter==="MarketC") {
-      gsap.to('#FilterBottomBar', {left:'15.65%', width:'6rem'})
+      gsap.to('#FilterBottomBar', {left:`${ValArr[2].left-70}px`, width:`${ValArr[2].width+10}px`})
     }
     if(filter==="24HPI") {
-      gsap.to('#FilterBottomBar', {left:'22.15%', width:'8rem'})
+      gsap.to('#FilterBottomBar', {left:`${ValArr[3].left-70}px`, width:`${ValArr[3].width+10}px`})
     }
     settokenFilters(newFilter);
   }
@@ -35,10 +39,10 @@ const TokenFilter = ({tokenFilters, settokenFilters}) => {
   return (
     <div className="  w-full flex justify-between items-center px-4 py-4 border-b-2 border-[#242628] relative">
     <div className={` flex justify-center items-center gap-4 ${bebas.className}`}>
-      <button onClick={() => changePrimaryFilters('LaunchedT')} className={` rounded-xl bg-darkPry px-2 py-1 ${tokenFilters.primaryFilter==='LaunchedT'?" text-white":" text-white/25"}`}>LAUNCHED TIME</button>
-      <button onClick={() => changePrimaryFilters('TradingV')} className={` rounded-xl bg-darkPry px-2 py-1 ${tokenFilters.primaryFilter==='TradingV'?" text-white":" text-white/25"}`}>TRADING VOLUME</button>
-      <button onClick={() => changePrimaryFilters('MarketC')} className={` rounded-xl bg-darkPry px-2 py-1 ${tokenFilters.primaryFilter==='MarketC'?" text-white":" text-white/25"}`}>MARKET CAP</button>
-      <button onClick={() => changePrimaryFilters('24HPI')} className={` rounded-xl bg-darkPry px-2 py-1 ${tokenFilters.primaryFilter==='24HPI'?" text-white":" text-white/25"}`}>24H PRICE INCREASE</button>
+      <button onClick={() => changePrimaryFilters('LaunchedT')} className={` homepageFilterBtn rounded-xl bg-darkPry px-2 py-1 ${tokenFilters.primaryFilter==='LaunchedT'?" text-white":" text-white/25"}`}>LAUNCHED TIME</button>
+      <button onClick={() => changePrimaryFilters('TradingV')} className={` homepageFilterBtn rounded-xl bg-darkPry px-2 py-1 ${tokenFilters.primaryFilter==='TradingV'?" text-white":" text-white/25"}`}>TRADING VOLUME</button>
+      <button onClick={() => changePrimaryFilters('MarketC')} className={` homepageFilterBtn rounded-xl bg-darkPry px-2 py-1 ${tokenFilters.primaryFilter==='MarketC'?" text-white":" text-white/25"}`}>MARKET CAP</button>
+      <button onClick={() => changePrimaryFilters('24HPI')} className={` homepageFilterBtn rounded-xl bg-darkPry px-2 py-1 ${tokenFilters.primaryFilter==='24HPI'?" text-white":" text-white/25"}`}>24H PRICE INCREASE</button>
       <div id="FilterBottomBar" className=" absolute top-full left-[0.25%] w-28 h-[2px] rounded-full bg-[#FFD47E]"/>
     </div>
     <div className=" flex justify-center items-center gap-4 font-beat">

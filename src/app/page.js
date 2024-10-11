@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ScreenHome from "./components/home/ScreenHome";
+import LaunchScreen from "./components/launch/LaunchScreen";
 
 
 export const metadata = {
@@ -12,12 +13,13 @@ export default async function Home() {
   const tokens = await response.json();
 
   return (
-    <main className=" w-full pt-20 pl-16 font-[family-name:var(--font-geist-sans)]">
-<div className=" w-full">
+    <main className=" w-full pt-20 pl-16 relative font-[family-name:var(--font-geist-sans)]">
+<div id="HomeScreen" className=" w-full">
   <Image src={'/homepageTop.png'} alt="godzilla" width={1400} height={200} className=" w-full h-auto"/>
 
   <ScreenHome tokens={tokens}/>
 </div> 
+  <LaunchScreen/>
     </main>
   );
 }

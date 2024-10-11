@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ScreenHome from "./components/home/ScreenHome";
-import LaunchScreen from "./components/launch/LaunchScreen";
+import LaunchPageWrapper from "./components/launch/LaunchScreen";
 
 
 export const metadata = {
@@ -19,7 +19,7 @@ export default async function Home() {
 
   <ScreenHome tokens={tokens}/>
 </div> 
-  <LaunchScreen/>
+  <LaunchPageWrapper/>
     </main>
   );
 }

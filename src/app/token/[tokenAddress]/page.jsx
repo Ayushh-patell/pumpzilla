@@ -6,11 +6,13 @@ const Page = async ({ params }) => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tokenOne?tokenAddress=${params.tokenAddress}`);
 
     if (!response.ok) {
-      // Check for 404 or other errors and display proper feedback
-      if (response.status === 404) {
-        return notFound();  // Trigger Next.js' built-in 404 page
-      }
-      throw new Error('Unexpected response from the server');
+
+      return notFound();  // Trigger Next.js' built-in 404 page
+    }
+
+    const contentType = response.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      return notFound();
     }
 
     const tokenData = await response.json();

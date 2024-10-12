@@ -10,9 +10,18 @@ export const metadata = {
 
 export default async function Home() {
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tokens`);
-  const priceResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/prices`);
+  // const priceResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/prices`);
   const tokens = await response.json();
-  const prices = await priceResponse.json();
+  // const prices = await priceResponse.json();
+  const prices = [
+    {
+      name: "ExampleToken1",
+      symbol: "EXT1",
+      token_address: "0x1234567890abcdef1234567890abcdef12345678",
+      current_price: 100.50, // Example current price
+      yesterday_price: 98.75 // Example yesterday price
+  },
+  ]
 
   return (
     <main className=" w-full pt-20 pl-16 relative font-[family-name:var(--font-geist-sans)]">

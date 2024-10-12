@@ -35,6 +35,13 @@ body {
   box-shadow: 0 0 0 2px linear-gradient(90deg, #FF4672, #B872FF) 
               /* 0 0 10px 2px rgba(255, 255, 255, 0.3); Extra glow effect on focus */
 }
+
+/* #ImgBg div div {
+  background-image: url('../../public/city.png');
+  background-repeat: no-repeat;
+} */
+
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

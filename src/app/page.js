@@ -10,14 +10,16 @@ export const metadata = {
 
 export default async function Home() {
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tokens`);
+  const priceResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/prices`);
   const tokens = await response.json();
+  const prices = await priceResponse.json();
 
   return (
     <main className=" w-full pt-20 pl-16 relative font-[family-name:var(--font-geist-sans)]">
 <div id="HomeScreen" className=" w-full">
   <Image src={'/homepageTop.png'} alt="godzilla" width={1400} height={200} className=" w-full h-auto"/>
 
-  <ScreenHome tokens={tokens}/>
+  <ScreenHome tokens={tokens} prices={prices}/>
 </div> 
   <LaunchPageWrapper/>
     </main>

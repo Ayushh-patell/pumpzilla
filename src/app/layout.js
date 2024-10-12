@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${beatWord.variable} ${cheese.variable} antialiased`}
       >
-            <header className=' fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 py-3 bg-darkPry'>
+            <header className=' fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 py-3 bg-darkPry' style={{boxShadow:"70px 10px 10px rgba(0,0,0,0.4)"}}>
       {/* LOGO */}
         <div className=" flex justify-center items-end">
           <Image src={'/Logo.png'} alt="Logo" className=" h-14 w-auto" width={100} height={100}/>

@@ -1,11 +1,13 @@
 import { bebas, mont } from '@/app/layout'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const TokenGridItem = ({data}) => {
-  // console.log(data, data.properties.image);
+
   return (
-    <div className=" bg-darkPry rounded-3xl relative overflow-hidden">
+<Link href={`/token/${data.token_address}`}>
+<div className=" bg-darkPry rounded-3xl relative overflow-hidden">
 {/* MAIN IMAGE */}
     <div className=" w-full px-4 pt-6  relative z-10 overflow-hidden">
     <Image src={`https://ipfs.io/ipfs/${data.properties.meta.image}`} alt="token" width={200} height={300} className=" w-full rounded-t-3xl"/>
@@ -24,7 +26,7 @@ const TokenGridItem = ({data}) => {
 {/* NAME */}
 <h3 className={`${mont.className} font-extrabold text-white relative z-10 px-4 text-lg truncate`}>{data.name}</h3>
 {/* TOKEN BY */}
-<p className={`${bebas.className} text-bluePry relative z-10 px-4`}>CREATED BY {data.deployed_by.slice(0,6)}...{data.deployed_by.slice(data.deployed_by.length-4, data.deployed_by.length)}</p>
+<p className={`${bebas.className} ${((data.current_price - data.yesterday_price)*100)/data.yesterday_price < 0?" text-[#FF4A6B]":" text-bluePry"}  relative z-10 px-4`}>CREATED BY {data.deployed_by.slice(0,6)}...{data.deployed_by.slice(data.deployed_by.length-4, data.deployed_by.length)}</p>
 {/* DESCRIPTION */}
 <p className={`${mont.className} text-[10px] text-white/20 relative z-10 px-4 font-bold my-2`}>{data.properties.meta.description}</p>
 {/* SOCIALS */}
@@ -45,14 +47,15 @@ const TokenGridItem = ({data}) => {
   MARKET CAP 19K
   <div style={{maskImage:"linear-gradient(90deg, transparent, black)"}} className=" border-2 border-[#A0D2FF] w-full h-full absolute top-0 left-0 z-0 rounded-tl-3xl rounded-br-3xl bg-transparent"></div>
 </div>
-{/* border: 2.64px solid;
 
-border-image-source: linear-gradient(101.44deg, rgba(255, 255, 255, 0) 35.73%, #A0D2FF 100%);
-
- */}
 {/* TOP PERCENTAGE */}
 <div className={` text-white absolute z-20 top-0 left-0 bg-gradient-to-l from-bluePry to-[#5E6EFF] rounded-br-3xl px-8 py-1 text-lg ${bebas.className}`} style={{boxShadow:'5px 5px 10px rgba(0,0,0,0.3)'}}>
-  +9%
+  {
+    isNaN(((data.current_price - data.yesterday_price)*100)/data.yesterday_price)? 0
+    :
+  (((data.current_price - data.yesterday_price)*100)/data.yesterday_price).toFixed(2)
+  }%
+
 </div>
 
       {/* BORDER */}
@@ -60,6 +63,7 @@ border-image-source: linear-gradient(101.44deg, rgba(255, 255, 255, 0) 35.73%, #
         <div className=" w-full h-full bg-darkPry rounded-[23px]"></div>
       </div>
     </div>
+</Link>
   )
 }
 

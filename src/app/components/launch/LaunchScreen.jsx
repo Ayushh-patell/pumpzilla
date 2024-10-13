@@ -10,9 +10,11 @@ import Image from 'next/image';
 import LaunchInput from './LaunchInput';
 import LaunchTextArea from './LaunchTextArea';
 import { Montserrat } from 'next/font/google';
+import { CustomEase } from 'gsap/all';
 
 let timeOut;
 const mont = Montserrat({ subsets: ['cyrillic'] });
+gsap.registerPlugin(CustomEase);
 
 const LaunchScreen = () => {
   const searchParams = useSearchParams();
@@ -46,6 +48,12 @@ const LaunchScreen = () => {
       changeFormValue(key, value);
     }, 800);
   };
+
+  const springAni = (e) => {
+    gsap.to(e.target, {scale:0.6, duration:0.1});
+    gsap.to(e.target, {scale:1, duration:0.5, delay:0.1, ease: CustomEase.create("custom", "M0,0 C0.129,0.352 0.131,0.32 0.19,0.533 0.226,0.664 0.305,1.349 0.378,1.396 0.417,1.421 0.534,0.9 0.6,0.9 0.647,0.9 0.701,1.167 0.76,1.172 0.8,1.174 0.862,0.937 0.903,0.937 0.943,0.936 1,1 1,1 ")});
+    
+  }
 
   useEffect(() => {
     if (searchParams.get('launch') === 'true') {
@@ -94,7 +102,7 @@ const LaunchScreen = () => {
             </div>
             <LaunchInput DebounceChange={DebounceChange} bgClr={'#111111'} font={'bebas'} name={'INITIAL BUY'} required={false} type={'text'} />
             <div className="w-full flex justify-center my-3 items-center">
-              <button className="font-cheese py-2 px-10 text-4xl mx-auto rounded-xl text-white bg-gradient-to-r from-[#FF4672] to-[#B972FF]" style={{ boxShadow: '5px 5px 10px rgba(0,0,0,0.3)' }}>LAUNCH</button>
+              <button onClick={springAni} className="font-cheese py-2 px-10 text-4xl mx-auto rounded-xl text-white bg-gradient-to-r from-[#FF4672] to-[#B972FF]" style={{ boxShadow: '5px 5px 10px rgba(0,0,0,0.3)' }}>LAUNCH</button>
             </div>
           </div>
         </div>

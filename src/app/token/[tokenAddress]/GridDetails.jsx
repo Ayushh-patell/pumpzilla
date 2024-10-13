@@ -7,6 +7,7 @@ import MetricsDetails from './components/metricsDetails';
 import GraphicDetails from './components/graphicDetails';
 import BuySellDetails from './components/buysellDetails';
 import HolderDetails from './components/holderDetails';
+import BottomDetails from './components/bottomSection/bottomDetails';
 
 
 
@@ -16,8 +17,8 @@ const GridDetails = ({tokenData}) => {
     useEffect(() => {
         // DYNAMICALLY UPDATE THE HEIGHT AND WIDTH OF THE IMAGES WITH THE PARENT MAIN DIV
         const mainVals = document.getElementById('ImgBg').getBoundingClientRect();
-        console.log(mainVals);
-        document.querySelector('#rightDiv').style.height = `${mainVals.height}px`
+        const relativeHeightDiv = document.getElementById('relativeHeightDiv').getBoundingClientRect();
+        document.querySelector('#rightDiv').style.height = `${relativeHeightDiv.height}px`
         let itemImg = document.querySelectorAll('#ImgBg .detailDiv .bgImgPart');
         itemImg.forEach((el) => {
             el.style.width = `${mainVals.width}px`;
@@ -35,7 +36,8 @@ const GridDetails = ({tokenData}) => {
     },[])
 
     return (
-    <div id="ImgBg" className=" w-full flex justify-center items-center gap-4 relative">
+    <div id="ImgBg" className=" w-full relative">
+    <div id='relativeHeightDiv' className='flex justify-center items-center gap-4 '>
     <div className=" w-3/4 grid grid-cols-3 gap-4 z-0">
         <BasicDetails tokenData={tokenData}/>
         <MetricsDetails/>
@@ -45,6 +47,8 @@ const GridDetails = ({tokenData}) => {
         <BuySellDetails tokenData={tokenData}/>
         <HolderDetails/>
     </div>
+    </div>
+    <BottomDetails/>
 
 </div>
   )

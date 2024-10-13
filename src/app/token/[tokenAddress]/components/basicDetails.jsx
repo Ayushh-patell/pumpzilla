@@ -14,10 +14,13 @@ const BasicDetails = ({tokenData}) => {
             <p className=' text-white/30 truncate font-bold py-1'>Created by: <span className={`${bebas.className} text-white`}>{tokenData.deployed_by}</span></p>
             <div className=' w-full flex justify-start items-center gap-2'>
                 <p className=' text-white/30 font-bold truncate'>Contract: <span className={`${bebas.className} text-white`}>{tokenData.token_address}</span></p>
+                {/* COPY AND LINK BUTTON */}
+                <button onClick={()=> navigator.clipboard.writeText(tokenData.token_address)} className=' bg-blackPry rounded-lg p-1 flex justify-center items-center' style={{boxShadow:"4px 4px 5px rgba(0,0,0,0.4)"}}><Image src={'/copy.png'} alt='Copy' width={20} height={20} className=' size-4'/></button>
+                <button className=' bg-blackPry rounded-lg p-1 flex justify-center items-center' style={{boxShadow:"4px 4px 5px rgba(0,0,0,0.4)"}}><Image src={'/link.png'} alt='link' width={20} height={20} className=' size-4'/></button>
             </div>
 
             <p className=' font-bold text-white/30 pt-4 text-xl'>Market Cap</p>
-            <p className=' bg-gradient-to-r from-purplePry to-[#A647E1] bg-clip-text text-transparent font-extrabold text-2xl pb-4'>$ 16.9k</p>
+            <p className=' w-fit bg-gradient-to-r from-purplePry to-[#A647E1] bg-clip-text text-transparent font-extrabold text-2xl pb-4'>$ 16.9k</p>
 
             <div className=' flex justify-center items-center gap-3 pt-1'>
                 <Link href={tokenData.properties.meta.external_url}>

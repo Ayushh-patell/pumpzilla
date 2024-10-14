@@ -9,12 +9,13 @@ import { useRouter } from 'next/navigation'
 const HomeToptokenItem = ({data}) => {
   const router = useRouter();
   return (
-<Link className=' h-full' href={`/token/${data?.token_address}`}>
-<div className=" h-full bg-darkPry rounded-2xl relative overflow-hidden">
+    <div className=" h-full bg-darkPry rounded-2xl relative overflow-hidden">
 {/* MAIN IMAGE */}
+<Link className=' h-full' href={`/token/${data?.token_address}`}>
     <div className=" w-full px-2 pt-3 relative z-10 overflow-hidden">
     <Image src={`https://ipfs.io/ipfs/${data?.properties.meta.image}`} alt="token" width={200} height={300} className=" w-full rounded-t-2xl"/>
     </div>
+</Link>
 
 {/* PERCENTAGE BAR */}
     <div className=" w-full mt-1 mb-1 px-2 relative z-10">
@@ -27,9 +28,13 @@ const HomeToptokenItem = ({data}) => {
     </div>
 
 {/* NAME */}
+<Link className=' h-full' href={`/token/${data?.token_address}`}>
 <h3 className={`${mont.className} font-extrabold text-white relative z-10 px-2 text-sm truncate`}>{data?.name}</h3>
+</Link>
 {/* TOKEN BY */}
+<Link className=' h-full' href={`/token/${data?.token_address}`}>
 <p className={`${bebas.className} ${((data?.current_price - data?.yesterday_price)*100)/data?.yesterday_price < 0?" text-[#FF4A6B]":" text-bluePry"} text-xs relative z-10 px-2`}>CREATED BY {data?.deployed_by.slice(0,6)}...{data?.deployed_by.slice(data?.deployed_by.length-4, data?.deployed_by.length)}</p>
+</Link>
 
 {/* SOCIALS */}
 <div className=" w-1/2 mt-3 px-3 pl-4 py-1 flex justify-between items-center gap-1 relative z-10">
@@ -60,7 +65,7 @@ const HomeToptokenItem = ({data}) => {
         <div className=" w-full h-full bg-darkPry rounded-[15px]"></div>
       </div>
     </div>
-</Link>
+
   )
 }
 

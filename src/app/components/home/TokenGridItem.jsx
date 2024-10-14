@@ -6,12 +6,13 @@ import React from 'react'
 const TokenGridItem = ({data}) => {
 
   return (
-<Link href={`/token/${data?.token_address}`}>
-<div className=" bg-darkPry rounded-3xl relative overflow-hidden">
+    <div className=" bg-darkPry rounded-3xl relative overflow-hidden">
 {/* MAIN IMAGE */}
+<Link href={`/token/${data?.token_address}`}>
     <div className=" w-full px-4 pt-6  relative z-10 overflow-hidden">
     <Image src={`https://ipfs.io/ipfs/${data.properties.meta.image}`} alt="token" width={200} height={300} className=" w-full rounded-t-3xl"/>
     </div>
+</Link>
 
 {/* PERCENTAGE BAR */}
     <div className=" w-full mt-4 mb-1 px-4 relative z-10">
@@ -24,11 +25,17 @@ const TokenGridItem = ({data}) => {
     </div>
 
 {/* NAME */}
+<Link href={`/token/${data?.token_address}`}>
 <h3 className={`${mont.className} font-extrabold text-white relative z-10 px-4 text-lg truncate`}>{data.name}</h3>
+</Link>
 {/* TOKEN BY */}
+<Link href={`/token/${data?.token_address}`}>
 <p className={`${bebas.className} ${((data.current_price - data.yesterday_price)*100)/data.yesterday_price < 0?" text-[#FF4A6B]":" text-bluePry"}  relative z-10 px-4`}>CREATED BY {data.deployed_by.slice(0,6)}...{data.deployed_by.slice(data.deployed_by.length-4, data.deployed_by.length)}</p>
+</Link>
 {/* DESCRIPTION */}
+<Link href={`/token/${data?.token_address}`}>
 <p className={`${mont.className} text-[10px] text-white/20 relative z-10 px-4 font-bold my-2`}>{data.properties.meta.description}</p>
+</Link>
 {/* SOCIALS */}
 <div className=" w-1/2 mt-6 px-4 py-2 flex justify-between items-center gap-1 relative z-10">
   <a href={data.properties.meta.social_media.twitter} target="_blank" rel="noopener noreferrer">
@@ -63,7 +70,6 @@ const TokenGridItem = ({data}) => {
         <div className=" w-full h-full bg-darkPry rounded-[23px]"></div>
       </div>
     </div>
-</Link>
   )
 }
 

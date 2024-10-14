@@ -13,12 +13,14 @@ const MetricsDetails = ({tokenData}) => {
     const hours = Math.floor(diffInMiliSeconds / 36000);
     
   
-    if (minutes < 60) {
-      return minutes === 1 ? '1 minute ago' : `${minutes} minutes ago`;
+    if (minutes < 0) {
+      const date = new Date(timestamp);
+      return date.toLocaleDateString();
+    } else if (minutes < 60) {
+      return minutes === 1 ? "1 minute ago" : `${minutes} minutes ago`;
     } else if (hours < 24) {
-      return hours === 1 ? '1 hour ago' : `${hours} hours ago`;
+      return hours === 1 ? "1 hour ago" : `${hours} hours ago`;
     } else {
-      
       const date = new Date(timestamp);
       return date.toLocaleDateString();
     }

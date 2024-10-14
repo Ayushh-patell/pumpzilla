@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 
 export async function GET(request) {
+    const headers = new Headers({
+        'Cache-Control': 'no-store', // Disable caching on Vercel
+    })
     // Array of 3 hardcoded objects
     const tokens = [
         {
@@ -81,5 +84,5 @@ export async function GET(request) {
     }
 
     // Send response with all tokens if no token_address is provided
-    return NextResponse.json(tokens);
+    return NextResponse.json(tokens, { headers });
 }

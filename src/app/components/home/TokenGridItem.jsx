@@ -6,7 +6,7 @@ import React from 'react'
 const TokenGridItem = ({data}) => {
 
   return (
-<Link href={`/token/${data.token_address}`}>
+<Link href={`/token/${data?.token_address}`}>
 <div className=" bg-darkPry rounded-3xl relative overflow-hidden">
 {/* MAIN IMAGE */}
     <div className=" w-full px-4 pt-6  relative z-10 overflow-hidden">

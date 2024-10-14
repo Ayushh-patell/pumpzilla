@@ -17,10 +17,10 @@ const ScreenHome = ({tokens, prices}) => {
 
   useEffect(() => {
     // Combine tokens and prices into a new array
-    let newtokenArr = tokens.map((tokenData) => {
+    let newtokenArr = tokens?.map((tokenData) => {
       tokenData.current_price = 0;
       tokenData.yesterday_price = 0;
-      let idx = prices.map(obj => obj.token_address).indexOf(tokenData.token_address);
+      let idx = prices?.map(obj => obj?.token_address).indexOf(tokenData?.token_address);
   
       if (idx !== -1) {
         tokenData.current_price = prices[idx].current_price;

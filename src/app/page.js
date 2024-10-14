@@ -10,10 +10,24 @@ export const metadata = {
 };
 
 export default async function Home() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tokens`);
-  const priceResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/prices`);
-  const tokens = await response.json();
-  const prices = await priceResponse.json();
+  let tokens = [];
+  let prices = [];
+
+  try {
+    // Fetch tokens and prices from your API
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tokens`);
+    const priceResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/prices`);
+
+    // Check if the responses are okay
+    if (response.ok && priceResponse.ok) {
+      tokens = await response.json();
+      prices = await priceResponse.json();
+    } else {
+      console.log("Failed to fetch data:", response.statusText, priceResponse.statusText);
+    }
+  } catch (error) {
+    console.log("Fetch failed:", error);
+  }
 
   return (
     <main className=" w-full pt-20 pl-16 relative font-[family-name:var(--font-geist-sans)]">

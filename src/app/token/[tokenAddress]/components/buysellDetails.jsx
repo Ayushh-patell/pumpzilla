@@ -37,8 +37,8 @@ const BuySellDetails = ({tokenData}) => {
 <div className="detailDiv w-full rounded-2xl bg-darkPry p-4 relative overflow-hidden h-[55%]">
     {/* BUY/SELL BUTTON */}
        <div className=' flex justify-center items-center gap-4 relative z-10'>
-        <button onClick={() => setisBuy(true)} className={`${isBuy? " text-white bg-gradient-to-r from-bluePry to-[#5E6EFF]":" text-white/30 bg-[#2C2D30]"} rounded-xl ${mont.className} font-extrabold py-2 px-4 w-1/2`} style={{boxShadow:"4px 4px 10px rgba(0,0,0,0.4)"}}>BUY</button>
-        <button onClick={() => setisBuy(false)} className={`${!isBuy? " text-white bg-gradient-to-r from-bluePry to-[#5E6EFF]":" text-white/30 bg-[#2C2D30]"} rounded-xl ${mont.className} font-extrabold py-2 px-4 w-1/2`} style={{boxShadow:"4px 4px 10px rgba(0,0,0,0.4)"}}>SELL</button>
+        <button onClick={() => setisBuy(true)} className={`${isBuy? " text-white bg-gradient-to-r from-bluePry to-[#5E6EFF]":" text-white/30 bg-[#2C2D30]"} rounded-2xl ${mont.className} font-extrabold py-2 px-4 w-1/2`} style={{boxShadow:"4px 4px 10px rgba(0,0,0,0.4)"}}>BUY</button>
+        <button onClick={() => setisBuy(false)} className={`${!isBuy? " text-white bg-gradient-to-r from-bluePry to-[#5E6EFF]":" text-white/30 bg-[#2C2D30]"} rounded-2xl ${mont.className} font-extrabold py-2 px-4 w-1/2`} style={{boxShadow:"4px 4px 10px rgba(0,0,0,0.4)"}}>SELL</button>
        </div> 
        {/* SETTING */}
        <div className=' flex justify-end items-center py-3'>
@@ -51,23 +51,23 @@ const BuySellDetails = ({tokenData}) => {
         <Image src={`https://ipfs.io/ipfs/${tokenData.properties.meta.image}`} alt='ETH' width={30} height={30} className={` ${isBuy && " hidden"} size-7 rounded-full absolute z-10 pointer-events-none top-1/2 -translate-y-1/2 right-3`}/>
        </div>
       {/* BONDING CURVE BAR */}
-      <div className=' w-full py-3 relative z-10'>
-        <div className=' w-full relative h-2 rounded-full bg-white/10'>
+      <div className=' w-full py-3 relative z-20'>
+        <div className=' w-full relative h-2 rounded-full bg-[#2c2d2f]'>
           <div aria-hidden className=' pointer-events-none absolute top-0 left-0 h-full w-3/4 bg-gradient-to-r from-[#B872FF] to-[#5E6EFF] rounded-full'/>
         </div>
         <p className=' flex justify-between items-center'>
           <span className={` ${bebas.className} text-white`}>BONDING CURVE PROGRESS</span>
-          <span className={` bg-gradient-to-r from-[#BB72FF] to-[#5E6EFF] bg-clip-text text-transparent ${mont.className} font-bold`}>75 %</span>
+          <span className={` bg-gradient-to-r to-[#BB72FF] from-[#5E6EFF] bg-clip-text text-transparent ${mont.className} font-bold`}>75 %</span>
         </p>
       </div>
       {/* INFO */}
       <div className={` w-full rounded-3xl p-4 bg-blackPry ${bebas.className} relative z-10 text-center`}>
-      <p>There are <span>676,991,162.93</span> PROMOTION tokens and <span>4,546.3</span> ETH still available in the bonding curve for sale.</p>
-      <p> When the <span>Market cap</span> reaches <span>$77,296.81</span>, all the liquidity from the bonding curve will be moved to UNISWAP and <span>locked</span>. <span>The process speeds up as the price increases</span>.</p>
+      <p>There are <span className=' bg-gradient-to-r from-[#646EFF] to-[#B471FF] bg-clip-text text-transparent'>676,991,162.93</span> PROMOTION tokens and <span className=' bg-gradient-to-r from-[#525dff] to-[#535fff] bg-clip-text text-transparent'>4,546.3</span> ETH still available in the bonding curve for sale.</p>
+      <p> When the <span className=' bg-gradient-to-r from-[#646EFF] to-[#9570FF] bg-clip-text text-transparent'>Market cap</span> reaches <span className=' bg-gradient-to-r from-[#B872FF] to-[#B871FE] bg-clip-text text-transparent'>$77,296.81</span>, all the liquidity from the bonding curve will be moved to UNISWAP and <span className=' bg-gradient-to-r from-[#646EFF] to-[#8F6FFE] bg-clip-text text-transparent'>locked</span>. <span className=' bg-gradient-to-r from-[#FF4A6A] to-[#E40CC9] bg-clip-text text-transparent'>The process speeds up as the price increases</span>.</p>
       </div>
       {/* FINAL BUTTON */}
     <div className=' w-full flex justify-center items-center py-2'>
-    <button className=' px-5 py-1 text-lg bg-gradient-to-r from-[#FF4672] to-[#B972FF] rounded-xl text-white font-cheese'>{isBuy?"BUY":"SELL"}</button>
+    <button className=' px-6 py-0 text-2xl bg-gradient-to-r from-[#FF4672] to-[#B972FF] rounded-lg text-white font-cheese'>{isBuy?"BUY":"SELL"}</button>
     </div> 
     <Image src={'/city.png'} alt="city" width={400} height={200} className="bgImgPart pointer-events-none max-w-none left-0 top-0 absolute z-0 object-cover object-top mix-blend-color-dodge"/>
      </div>
@@ -95,7 +95,7 @@ const BuySellDetails = ({tokenData}) => {
             <div className={` pointer-events-none absolute z-0 top-0 left-0 w-full h-full bg-gradient-to-b from-bluePry to-[#5E6EFF] ${slippage==="20"?" opacity-100":" opacity-0"} transition-all duration-200 ease-in-out`}></div>
             <p className=' relative z-10'>20%</p>
           </button>
-          <input onChange={changeSlippage} type="text" placeholder='ENTER AMOUNT' value={slippage} className=' w-full bg-[#161616] rounded-2xl px-4 py-1 placeholder:text-white/20 text-white' />
+          <input onChange={changeSlippage} type="text" placeholder='ENTER AMOUNT' value={slippage?slippage:""} className=' w-full bg-[#161616] rounded-2xl px-4 py-1 placeholder:text-white/20 text-white' />
         </div>
 
         <div className={`${(slippage>=10)?" opacity-100":" opacity-0"} transition-all duration-150 w-full p-4`}>

@@ -9,6 +9,8 @@ export async function GET(request) {
             decimals: 18,
             token_address: "0x1234567890abcdef1234567890abcdef12345678",
             deployed_by: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            current_price: 100.50, // Example current price
+            yesterday_price: 98.75, // Example yesterday price
             properties: {
                 meta: {
                     description: "Description for ExampleToken1",
@@ -28,6 +30,8 @@ export async function GET(request) {
             decimals: 18,
             token_address: "0xabcdefabcdefabcdefabcdefabcdefabcdefabcd",
             deployed_by: "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+            current_price: 200.00, // Example current price
+            yesterday_price: 195.00,
             properties: {
                 meta: {
                     description: "Description for ExampleToken2",

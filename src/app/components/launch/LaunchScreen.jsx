@@ -78,7 +78,7 @@ const LaunchScreen = () => {
         <div className="w-2/5 h-full flex pl-10 justify-start items-center">
           <div className="rounded-3xl overflow-hidden relative w-4/5 h-3/4 bg-blackPry">
             <div className="flex justify-center items-center gap-4 flex-col w-full h-full p-8 relative z-10">
-              <div className="w-1/2 aspect-square rounded-full p-3 flex justify-center items-center relative bg-gradient-to-bl from-[#5E6EFF] to-[#B910BC]">
+              <div className="w-1/2 aspect-square rounded-full p-1 flex justify-center items-center relative bg-gradient-to-bl from-[#5E6EFF] to-[#B910BC]">
                 <Image src={'/profile.png'} alt="profile" width={100} height={100} className="w-full h-full object-contain object-center" />
                 <button className="absolute bottom-0 right-0 flex justify-center items-center p-2 rounded-2xl border-4 border-blackPry bg-gradient-to-b from-bluePry to-[#5E6EFF]">
                   <Image src={'/pencil.png'} alt="edit" width={40} height={40} className="size-7" />
@@ -93,7 +93,7 @@ const LaunchScreen = () => {
         <div className="w-1/2 h-full flex justify-end items-center px-14 py-10">
           <div className="w-full h-full">
             <h4 className={`${mont.className} font-black text-white text-4xl w-full text-center`}>LAUNCH YOUR TOKEN !</h4>
-            <p className={`bg-gradient-to-r from-[#4EA5FF] to-[#B972FF] bg-clip-text text-transparent ${mont.className} font-medium py-2 text-center`}>No presale, No Team Allocation, Lower Gas</p>
+            <p className={`bg-gradient-to-r from-[#4EA5FF] to-[#B972FF] bg-clip-text text-transparent ${mont.className} font-medium py-2 pb-3 text-center`}>No presale, No Team Allocation, Lower Gas</p>
             <LaunchTextArea DebounceChange={DebounceChange} bgClr={'#111111'} font={'bebas'} name={'TOKEN DESCRIPTION'} required={false} type={'text'} />
             <LaunchInput DebounceChange={DebounceChange} bgClr={'#111111'} font={'bebas'} name={'WEBSITE'} required={false} type={'text'} />
             <div className="flex w-full justify-center items-center gap-2">

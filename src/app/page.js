@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ScreenHome from "./components/home/ScreenHome";
 import { LaunchPageWrapper } from "./components/launch/LaunchScreen";
+import HomeToptokenItem from "./components/HomeToptokenItem";
 
 
 export const metadata = {
@@ -13,20 +14,16 @@ export default async function Home() {
   const priceResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/prices`);
   const tokens = await response.json();
   const prices = await priceResponse.json();
-  // const prices = [
-  //   {
-  //     name: "ExampleToken1",
-  //     symbol: "EXT1",
-  //     token_address: "0x1234567890abcdef1234567890abcdef12345678",
-  //     current_price: 100.50, // Example current price
-  //     yesterday_price: 98.75 // Example yesterday price
-  // },
-  // ]
 
   return (
     <main className=" w-full pt-20 pl-16 relative font-[family-name:var(--font-geist-sans)]">
 <div id="HomeScreen" className=" w-full">
-  <Image src={'/homepageTop.png'} alt="godzilla" width={1400} height={200} className=" w-full h-auto"/>
+ <div className=" relative">
+ <Image src={'/homepageTop.png'} alt="godzilla" width={1400} height={200} className=" w-full h-auto"/>
+ <div className=" absolute z-10 top-1/2 -translate-y-1/2 right-4 h-[90%] aspect-[7/10]">
+  <HomeToptokenItem data={tokens[0]}/>
+ </div>
+ </div>
 
   <ScreenHome tokens={tokens} prices={prices}/>
 </div> 

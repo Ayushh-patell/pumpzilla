@@ -4,7 +4,7 @@ export const historyData = [
     type: "SELL",
     trx: "150",
     promotion: "570,345.10",
-    date: new Date() - 1200,
+    date: "2024-10-13T11:34:31.271Z",
     transaction: "0x1234567890abcdef1234567890abcdef12345678",
   },
   {

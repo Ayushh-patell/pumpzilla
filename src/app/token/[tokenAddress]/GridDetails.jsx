@@ -1,13 +1,11 @@
 'use client';
 
-import Image from 'next/image'
 import React, { useEffect } from 'react'
 import BasicDetails from './components/basicDetails';
 import MetricsDetails from './components/metricsDetails';
 import GraphicDetails from './components/graphicDetails';
 import BuySellDetails from './components/buysellDetails';
 import HolderDetails from './components/holderDetails';
-import BottomDetails from './components/bottomSection/bottomDetails';
 
 
 
@@ -37,10 +35,10 @@ const GridDetails = ({tokenData}) => {
 
     return (
     <div id="ImgBg" className=" w-full relative">
-    <div id='relativeHeightDiv' className='flex justify-center items-center gap-4 '>
-    <div className=" w-3/4 grid grid-cols-3 gap-4 z-0">
+    <div className='flex justify-center items-center gap-4 '>
+    <div id='relativeHeightDiv' className=" w-3/4 grid grid-cols-3 gap-4 z-0">
         <BasicDetails tokenData={tokenData}/>
-        <MetricsDetails/>
+        <MetricsDetails tokenData={tokenData}/>
         <GraphicDetails/>
     </div>
     <div id='rightDiv' className=" w-1/4 flex flex-col justify-center items-center gap-4 z-0">
@@ -48,7 +46,7 @@ const GridDetails = ({tokenData}) => {
         <HolderDetails/>
     </div>
     </div>
-    <BottomDetails/>
+    
 
 </div>
   )

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import GridDetails from "./GridDetails";
+import BottomDetails from "./components/bottomSection/bottomDetails";
 
 export const metadata = {
   title: "PumpZilla | Token",
@@ -11,12 +12,14 @@ const Page = async ({ params }) => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tokenOne?tokenAddress=${params.tokenAddress}`);
 
     if (!response.ok) {
-
-      return notFound();  // Trigger Next.js' built-in 404 page
+      console.error(response.statusText);
+      
+      return notFound(); 
     }
-
+    
     const contentType = response.headers.get("content-type");
     if (!contentType || !contentType.includes("application/json")) {
+      console.log(contentType);
       return notFound();
     }
 
@@ -25,6 +28,7 @@ const Page = async ({ params }) => {
     return (
       <main className="pt-24 pl-20 pr-4 pb-4 w-screen">
         <GridDetails tokenData={tokenData} />
+        <BottomDetails/>
       </main>
     );
   } catch (error) {

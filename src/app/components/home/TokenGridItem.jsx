@@ -30,7 +30,7 @@ const TokenGridItem = ({data}) => {
 {/* DESCRIPTION */}
 <p className={`${mont.className} text-[10px] text-white/20 relative z-10 px-4 font-bold my-2`}>{data.properties.meta.description}</p>
 {/* SOCIALS */}
-<div className=" w-1/2 mt-5 px-4 py-2 flex justify-between items-center gap-1 relative z-10">
+<div className=" w-1/2 mt-6 px-4 py-2 flex justify-between items-center gap-1 relative z-10">
   <a href={data.properties.meta.social_media.twitter} target="_blank" rel="noopener noreferrer">
     <Image src={'/twitter.png'} alt="twitter" width={50} height={50} className=" size-6 object-contain object-center"/>
   </a>
@@ -43,7 +43,7 @@ const TokenGridItem = ({data}) => {
 </div>
 
 {/* MARKET CAP */}
-<div className={` text-white absolute z-20 w-1/2 bottom-0 right-0 bg-gradient-to-l from-bluePry to-[#5E6EFF] rounded-tl-3xl px-8 py-3 text-lg ${bebas.className}`}>
+<div className={` text-white absolute z-20 w-fit whitespace-nowrap bottom-0 right-0 bg-gradient-to-l from-bluePry to-[#5E6EFF] rounded-tl-3xl px-8 py-3 text-lg ${bebas.className}`}>
   MARKET CAP 19K
   <div style={{maskImage:"linear-gradient(90deg, transparent, black)"}} className=" border-2 border-[#A0D2FF] w-full h-full absolute top-0 left-0 z-0 rounded-tl-3xl rounded-br-3xl bg-transparent"></div>
 </div>
@@ -59,7 +59,7 @@ const TokenGridItem = ({data}) => {
 </div>
 
       {/* BORDER */}
-      <div className=" pointer-events-none absolute z-0 top-0 left-0 w-full h-full bg-gradient-to-bl from-[#cfe8ff66] from-15% to-[#ffffff00] to-30% p-[2px]">
+      <div className=" pointer-events-none absolute z-0 top-0 left-0 w-full h-full bg-gradient-to-bl from-[#CFE8FF66] from-15% to-[#ffffff00] to-30% p-[2px]">
         <div className=" w-full h-full bg-darkPry rounded-[23px]"></div>
       </div>
     </div>

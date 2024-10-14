@@ -9,11 +9,11 @@ import { useRouter } from 'next/navigation'
 const HomeToptokenItem = ({data}) => {
   const router = useRouter();
   return (
-<Link className=' h-full' href={`/token/${data.token_address}`}>
+<Link className=' h-full' href={`/token/${data?.token_address}`}>
 <div className=" h-full bg-darkPry rounded-2xl relative overflow-hidden">
 {/* MAIN IMAGE */}
     <div className=" w-full px-2 pt-3 relative z-10 overflow-hidden">
-    <Image src={`https://ipfs.io/ipfs/${data.properties.meta.image}`} alt="token" width={200} height={300} className=" w-full rounded-t-2xl"/>
+    <Image src={`https://ipfs.io/ipfs/${data?.properties.meta.image}`} alt="token" width={200} height={300} className=" w-full rounded-t-2xl"/>
     </div>
 
 {/* PERCENTAGE BAR */}
@@ -27,19 +27,19 @@ const HomeToptokenItem = ({data}) => {
     </div>
 
 {/* NAME */}
-<h3 className={`${mont.className} font-extrabold text-white relative z-10 px-2 text-sm truncate`}>{data.name}</h3>
+<h3 className={`${mont.className} font-extrabold text-white relative z-10 px-2 text-sm truncate`}>{data?.name}</h3>
 {/* TOKEN BY */}
-<p className={`${bebas.className} ${((data.current_price - data.yesterday_price)*100)/data.yesterday_price < 0?" text-[#FF4A6B]":" text-bluePry"} text-xs relative z-10 px-2`}>CREATED BY {data.deployed_by.slice(0,6)}...{data.deployed_by.slice(data.deployed_by.length-4, data.deployed_by.length)}</p>
+<p className={`${bebas.className} ${((data?.current_price - data?.yesterday_price)*100)/data?.yesterday_price < 0?" text-[#FF4A6B]":" text-bluePry"} text-xs relative z-10 px-2`}>CREATED BY {data?.deployed_by.slice(0,6)}...{data?.deployed_by.slice(data?.deployed_by.length-4, data?.deployed_by.length)}</p>
 
 {/* SOCIALS */}
 <div className=" w-1/2 mt-3 px-3 pl-4 py-1 flex justify-between items-center gap-1 relative z-10">
-  <p onClick={()=> router.push(data.properties.meta.social_media.twitter)}>
+  <p onClick={()=> router.push(data?.properties.meta.social_media.twitter)}>
     <Image src={'/twitter.png'} alt="twitter" width={50} height={50} className=" size-3 object-contain object-center"/>
   </p>
-  <p onClick={()=> router.push(data.properties.meta.external_url)}>
+  <p onClick={()=> router.push(data?.properties.meta.external_url)}>
     <Image src={'/web.png'} alt="web" width={50} height={50} className=" size-3 object-contain object-center"/>
   </p>
-  <p onClick={()=> router.push(data.properties.meta.social_media.telegram)}>
+  <p onClick={()=> router.push(data?.properties.meta.social_media.telegram)}>
     <Image src={'/telegram.png'} alt="telegram" width={50} height={50} className=" size-3 object-contain object-center"/>
   </p>
 </div>

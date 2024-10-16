@@ -14,7 +14,7 @@ export default async function Home() {
   let prices = [];
 
   try {
-    // Fetch tokens and prices from your API
+    // Fetch tokens and prices from API
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tokens`);
     const priceResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/prices`);
 

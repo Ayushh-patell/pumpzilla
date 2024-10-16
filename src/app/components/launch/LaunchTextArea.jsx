@@ -17,8 +17,6 @@ const LaunchTextArea = ({name, font, bgClr, required, type, DebounceChange}) => 
         </>
     }
 
-    {/* BORDER */}
-    {/* <div className={` absolute pointer-events-none z-0 w-full h-full top-0 left-0 transition-all duration-300 ${isFocus?" opacity-100 bg-gradient-to-r from-[#FF4672] to-[#B872FF]":` opacity-0 ${bgClr==="#1B1C1E"?" bg-darkPry":" bg-blackPry"}`}`}></div> */}
     </div>
   )
 }

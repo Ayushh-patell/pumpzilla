@@ -6,7 +6,6 @@ const TokenFilter = ({tokenFilters, settokenFilters}) => {
   const changePrimaryFilters = (filter) => {
     let newFilter = {...tokenFilters};
     newFilter.primaryFilter = filter;
-    {/* 0.2, 7.9, 15.65, 22.15 */}
     let ValArr = Array.from(document.querySelectorAll('.homepageFilterBtn')).map((el) => {
       let vals = el.getBoundingClientRect();      
       return {left:vals.x, width:vals.width}

@@ -16,7 +16,6 @@ const BuySellDetails = ({tokenData}) => {
     gsap.to('#SettingsModal', {scale:1, duration:1, ease: CustomEase.create("custom", "M0,0 C0.129,0.352 0.131,0.32 0.19,0.533 0.226,0.664 0.305,1.349 0.378,1.396 0.417,1.421 0.534,0.963 0.6,0.963 0.647,0.963 0.701,1.042 0.76,1.047 0.8,1.049 0.862,0.98 0.903,0.98 0.943,0.979 1,1 1,1 ")})
     document.getElementById('closeModalBtn').focus();
   }
-  // }M0,0 C0.157,0.335 0.158,0.313 0.231,0.521 0.275,0.647 0.379,1.21 0.452,1.257 0.491,1.282 0.554,0.922 0.658,0.978 0.801,1.054 0.841,0.989 0.903,0.989 0.944,0.989 1,1 1,1 
   const closeModal = () => {
     gsap.set('body', {overflow:'auto'});
     gsap.to('#SettingsModalWrapper', {opacity:0, duration:0.5});

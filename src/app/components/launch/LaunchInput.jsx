@@ -17,8 +17,6 @@ const LaunchInput = ({name, font, bgClr, required, type, DebounceChange}) => {
         </>
     }
 
-    {/* BORDER */}
-    {/* <div className={` absolute pointer-events-none z-0 w-full h-full top-0 left-0 transition-all duration-300 `}></div> */}
     </div>
   )
 }

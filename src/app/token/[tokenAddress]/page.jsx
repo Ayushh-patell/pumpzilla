@@ -33,7 +33,7 @@ const Page = async ({ params }) => {
     );
   } catch (error) {
     console.error("Error fetching token data:", error);
-    // Handle different error types, such as network issues, unexpected formats, etc.
+
     return notFound();
   }
 };

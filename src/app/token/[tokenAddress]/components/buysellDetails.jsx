@@ -73,7 +73,7 @@ const BuySellDetails = ({tokenData}) => {
 
      {/* SETTINGS MODAL POPUP */}
      <div id='SettingsModalWrapper' className=' hidden pointer-events-none font-beat fixed z-40 top-0 left-0 w-screen h-dvh justify-center items-center bg-black/70'>
-      <div id='SettingsModal' className=' scale-50 w-3/4 rounded-3xl border-2 border-black bg-[#24262B] relative p-4'>
+      <div id='SettingsModal' className=' scale-50 w-1/2 rounded-3xl border-2 border-black bg-[#24262B] relative p-4'>
         <div className=' relative w-full flex justify-between items-center'>
           <p className=' relative z-10 bg-gradient-to-r from-[#5E6EFF] to-bluePry bg-clip-text text-transparent font-beat text-3xl'>SET MAX SLIPPAGE %</p>
           <p id='slippagetextBorder' className=' absolute z-0 top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-[#5E6EFF] to-bluePry bg-clip-text text-transparent font-beat text-3xl pointer-events-none'>SET MAX SLIPPAGE %</p>

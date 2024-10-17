@@ -22,7 +22,7 @@ const BasicDetails = ({tokenData}) => {
             <p className=' font-bold text-white/30 pt-4 text-xl'>Market Cap</p>
             <p className=' w-fit bg-gradient-to-r from-[#E309CE] to-[#A647E1] bg-clip-text text-transparent font-extrabold text-2xl pb-4'>$ 16.9k</p>
 
-            <div className=' flex justify-center items-center gap-3 pt-2'>
+            <div className=' flex justify-start items-center gap-3 pt-2'>
                 <Link href={tokenData.properties.meta.external_url}>
                     <button className=' flex justify-center items-center gap-2 bg-gradient-to-r from-[#5E6EFF] to-bluePry rounded-xl p-1 px-4'>
                         <Image src={'/web.png'} alt='website' width={20} height={20} className=' size-5 object-contain object-center'/>

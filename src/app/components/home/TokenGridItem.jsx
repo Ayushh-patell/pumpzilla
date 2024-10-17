@@ -34,10 +34,10 @@ const TokenGridItem = ({data}) => {
 </Link>
 {/* DESCRIPTION */}
 <Link href={`/token/${data?.token_address}`}>
-<p className={`${mont.className} text-[10px] text-white/20 relative z-10 px-4 font-bold my-2`}>{data.properties.meta.description}</p>
+<p className={`${mont.className} text-[10px] text-white/20 relative z-10 px-4 font-bold my-2 mb-16`}>{data.properties.meta.description}</p>
 </Link>
 {/* SOCIALS */}
-<div className=" w-1/2 mt-6 px-4 py-2 flex justify-between items-center gap-1 relative z-10">
+<div className=" w-1/2 px-4 py-3 flex justify-between items-center gap-1 absolute bottom-0 left-0 z-10">
   <a href={data.properties.meta.social_media.twitter} target="_blank" rel="noopener noreferrer">
     <Image src={'/twitter.png'} alt="twitter" width={50} height={50} className=" size-6 object-contain object-center"/>
   </a>

@@ -37,7 +37,7 @@ const HomeToptokenItem = ({data}) => {
 </Link>
 
 {/* SOCIALS */}
-<div className=" w-1/2 mt-3 px-3 pl-4 py-1 flex justify-between items-center gap-1 relative z-10">
+<div className=" w-1/2 px-3 pl-4 py-3 flex justify-between items-center gap-1 absolute bottom-0 left-0 z-10">
   <p onClick={()=> router.push(data?.properties.meta.social_media.twitter)}>
     <Image src={'/twitter.png'} alt="twitter" width={50} height={50} className=" size-3 object-contain object-center"/>
   </p>
@@ -52,7 +52,7 @@ const HomeToptokenItem = ({data}) => {
 {/* MARKET CAP */}
 <div className={` text-white absolute z-20 w-fit whitespace-nowrap bottom-[2px] right-[2px] bg-gradient-to-l from-[#FF4A6B] to-[#E30958] rounded-tl-2xl rounded-br-[15px] px-3 py-2 text-[12px] ${bebas.className}`}>
   MARKET CAP 19K
-  <div style={{maskImage:"linear-gradient(90deg, transparent, black)"}} className=" border-2 border-[#A0D2FF] w-full h-full absolute top-0 left-0 z-0 rounded-tl-2xl rounded-br-[15px] bg-transparent"></div>
+  <div style={{maskImage:"linear-gradient(135deg, transparent 40%, black)"}} className=" border-2 border-[#FFA0B1] w-full h-full absolute top-0 left-0 z-0 rounded-tl-2xl rounded-br-[15px] bg-transparent"></div>
 </div>
 
 {/* TOP PIN */}

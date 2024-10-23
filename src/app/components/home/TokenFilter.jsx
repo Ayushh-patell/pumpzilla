@@ -1,7 +1,10 @@
 import gsap from "gsap";
 import TokenFilterMobileMenu from "./tokenFilterMobileMenu";
-import { bebas } from "@/app/layout";
+import { Bebas_Neue } from "next/font/google";
 
+
+
+const bebas = Bebas_Neue({subsets:['latin'], weight:['400']})
 const TokenFilter = ({tokenFilters, settokenFilters}) => {
 
   const changePrimaryFilters = (filter) => {

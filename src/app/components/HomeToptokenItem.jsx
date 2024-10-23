@@ -3,9 +3,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { bebas, mont } from '../layout'
+import { mont } from '../layout'
 import { useRouter } from 'next/navigation'
+import { Bebas_Neue } from 'next/font/google';
 
+const bebas = Bebas_Neue({subsets:['latin'], weight:['400']})
 const HomeToptokenItem = ({data}) => {
   const router = useRouter();
   return (

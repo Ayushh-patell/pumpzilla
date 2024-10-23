@@ -1,6 +1,6 @@
-import { bebas } from "@/app/layout"
 import gsap from "gsap";
 import TokenFilterMobileMenu from "./tokenFilterMobileMenu";
+import { bebas } from "@/app/layout";
 
 const TokenFilter = ({tokenFilters, settokenFilters}) => {
 

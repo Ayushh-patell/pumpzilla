@@ -15,23 +15,23 @@ const TopNav = () => {
       
     }
   return (
-    <header className=' fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 pl-5 py-3 bg-darkPry' style={{boxShadow:"70px 6px 10px rgba(0,0,0,0.4)"}}>
+    <header className=' fixed top-0 left-0 w-full z-50 flex justify-between items-center sm450:px-4 px-2 pl-5 py-3 bg-darkPry' style={{boxShadow:"70px 6px 10px rgba(0,0,0,0.4)"}}>
     {/* LOGO */}
       <div className=" flex justify-center items-end">
-        <Image src={'/Logo.png'} alt="Logo" className=" h-14 w-auto" width={100} height={100}/>
-        <p className='font-[family-name:var(--font-beat-word)] bg-gradient-to-b from-purplePry to-bluePry text-transparent bg-clip-text text-xl'>UMPZILLA</p>
+        <Image src={'/Logo.png'} alt="Logo" className=" md:h-14 sm450:h-8 h-6 w-auto" width={100} height={100}/>
+        <p className='font-[family-name:var(--font-beat-word)] bg-gradient-to-b from-purplePry to-bluePry text-transparent bg-clip-text md:text-xl sm450:text-sm text-[10px]'>UMPZILLA</p>
       </div>
       {/* LOGO END */}
 
       {/* SEARCH */}
-      <div className=" w-[30%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
-      <Image src={"/search.svg"} alt="search icon" width={40} height={40} className=" size-6 absolute z-10 cursor-pointer pointer-events-none top-1/2 left-3 -translate-y-1/2"/>
-        <input type="text" placeholder="Search for tokens" className={` w-full bg-blackPry rounded-xl text-white placeholder:text-white/25 outline-none focus:outline-bluePry px-12 py-2 font-bold ${mont.className}`}/>
+      <div className=" md:w-[30%] sm570:w-[50%] sm450:w-[30%] w-[35%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+      <Image src={"/search.svg"} alt="search icon" width={40} height={40} className=" sm450:size-6 size-4 absolute z-10 cursor-pointer pointer-events-none top-1/2 sm450:left-3 left-2 -translate-y-1/2"/>
+        <input type="text" placeholder="Search for tokens" className={` w-full bg-blackPry rounded-xl text-white md:text-base text-sm placeholder:text-white/25 outline-none focus:outline-bluePry sm450:px-12 px-6 py-2 font-bold ${mont.className}`}/>
       </div>
       {/* SEARCH END */}
 
       {/* CONNECT BTN */}
-      <button onClick={springAni} className=" font-cheese bg-gradient-to-r from-bluePry to-purplePry rounded-xl text-lg px-4 py-2 text-white">CONNECT WALLET</button>
+      <button onClick={springAni} className=" font-cheese bg-gradient-to-r from-bluePry to-purplePry sm450:rounded-xl rounded-md md:text-lg text-xs sm450:px-4 px-2 sm450:py-2 py-1 text-white">CONNECT WALLET</button>
     </header>
   )
 }

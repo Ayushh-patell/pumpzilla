@@ -30,11 +30,12 @@ export default async function Home() {
   }
 
   return (
-    <main className=" w-full pt-20 pl-16 relative font-[family-name:var(--font-geist-sans)]">
+    <main className=" w-full md:pt-20 pt-14 md:pl-16 md:pb-0 pb-16 relative font-[family-name:var(--font-geist-sans)]">
 <div id="HomeScreen" className=" w-full">
  <div className=" relative">
- <Image src={'/homepageTop.png'} alt="godzilla" width={1400} height={200} className=" w-full h-auto"/>
- <div className=" absolute z-10 top-1/2 -translate-y-1/2 right-4 h-[90%] aspect-[7/10]">
+ <Image src={'/homepageTop.png'} alt="godzilla" width={1400} height={200} className=" lg890md:block hidden w-full h-auto xl:min-h-[316px] object-cover object-right"/>
+ <Image src={'/homepageTop-mobile.png'} alt="godzilla" width={1400} height={200} className=" lg890md:hidden block w-full h-auto xl:min-h-[316px] sm450:min-h-[200px] min-h-[175px] object-cover sm450:object-right object-[80%,50%]"/>
+ <div className=" absolute z-10 top-1/2 -translate-y-1/2 sm450:right-4 right-2 sm450:h-[90%] h-[95%] xl:aspect-[7/10] lg:aspect-[7/12] sm570:aspect-[7/11] aspect-[7/10]">
   <HomeToptokenItem data={tokens[0]}/>
  </div>
  </div>

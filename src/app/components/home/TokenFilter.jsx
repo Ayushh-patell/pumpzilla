@@ -46,7 +46,7 @@ const TokenFilter = ({tokenFilters, settokenFilters}) => {
       <button onClick={() => changePrimaryFilters('TradingV')} className={` homepageFilterBtn rounded-[10px] bg-darkPry px-2 py-1 ${tokenFilters.primaryFilter==='TradingV'?" text-white":" text-white/25"}`}>TRADING VOLUME</button>
       <button onClick={() => changePrimaryFilters('MarketC')} className={` homepageFilterBtn rounded-[10px] bg-darkPry px-2 py-1 ${tokenFilters.primaryFilter==='MarketC'?" text-white":" text-white/25"}`}>MARKET CAP</button>
       <button onClick={() => changePrimaryFilters('24HPI')} className={` homepageFilterBtn rounded-[10px] bg-darkPry px-2 py-1 ${tokenFilters.primaryFilter==='24HPI'?" text-white":" text-white/25"}`}>24H PRICE INCREASE</button>
-      <div id="FilterBottomBar" className=" absolute top-full left-[0.25%] md:w-28 w-16 h-[2px] rounded-full bg-[#FFD47E]"/>
+      <div id="FilterBottomBar" className=" absolute top-full left-[0.25%] md:w-28 w-20 h-[2px] rounded-full bg-[#FFD47E]"/>
     </div>
     <div className=" lg890md:flex hidden justify-center items-center gap-4 font-beat">
 

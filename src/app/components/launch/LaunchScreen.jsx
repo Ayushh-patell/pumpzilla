@@ -75,7 +75,7 @@ const LaunchScreen = () => {
       <RightBGImg />
 
       <div className="flex relative z-10 p-4 sm570:pt-4 pt-3 w-full h-full gap-4 md:flex-row flex-col justify-between items-center">
-        <div className="md:w-2/5 w-full md:h-full h-[48%] flex lg890md:pl-10 md:pl-4 justify-start items-center">
+        <div className="md:w-2/5 w-full md:h-full h-[47%] flex lg890md:pl-10 md:pl-4 justify-start items-center">
           <div className="rounded-3xl overflow-hidden relative xl1120lg:w-4/5 md:w-11/12 w-full md:h-3/4 h-full bg-blackPry">
             <div className="flex justify-center items-center sm570:gap-4 gap-2 md:flex-col sm570:flex-row flex-col w-full h-full lg:p-8 md:p-4 sm570:p-8 p-2 relative z-10">
               <div className="md:w-1/2 sm570:w-auto w-[20%] md:h-auto sm570:h-[90%] h-auto aspect-square rounded-full p-1 flex justify-center items-center relative bg-gradient-to-bl from-[#5E6EFF] to-[#B910BC]">
@@ -94,7 +94,7 @@ const LaunchScreen = () => {
         </div>
         <div className="md:w-1/2 w-full md:h-full h-[92%] flex justify-end items-center xl1120lg:px-14 lg:px-10 md:px-8 px-0 xl:pb-10 lg:pb-8 md:pb-6 pb-4 xl:pt-10 lg:pt-8 md:pt-6 sm570:py-12 py-6 ">
           <div className="w-full h-full">
-            <h4 className={`${mont.className} font-black text-white xl:text-4xl lg:text-3xl sm570:text-2xl text-lg w-full md:text-center sm570:text-left text-center md:pt-0 sm570:pt-1 pt-4`}>LAUNCH YOUR TOKEN !</h4>
+            <h4 className={`${mont.className} font-black text-white xl:text-4xl lg:text-3xl sm570:text-2xl text-lg w-full md:text-center sm570:text-left text-center md:pt-0 sm570:pt-1 pt-5`}>LAUNCH YOUR TOKEN !</h4>
             <p className={`bg-gradient-to-r from-[#4EA5FF] to-[#B972FF] bg-clip-text text-transparent ${mont.className} font-medium xl:py-2 py-0 pb-3 md:text-center sm570:text-left text-center xl:text-base lg:text-sm sm570:text-xs text-[10px]`}>No presale, No Team Allocation, Lower Gas</p>
             <div className=' w-full flex justify-center items-center md:gap-0 gap-2 md:flex-col sm570:flex-row flex-col'>
             <LaunchTextArea DebounceChange={DebounceChange} bgClr={'#111111'} font={'bebas'} name={'TOKEN DESCRIPTION'} required={false} type={'text'} />

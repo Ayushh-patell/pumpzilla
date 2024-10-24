@@ -50,7 +50,7 @@ const TokenGridItem = ({data}) => {
 </div>
 
 {/* MARKET CAP */}
-<div className={` text-white absolute z-20 w-fit whitespace-nowrap bottom-0 right-0 bg-gradient-to-l from-bluePry to-[#5E6EFF] lg890md:rounded-tl-3xl rounded-tl-2xl 1xl:px-8 lg:px-5 sm450:px-3 px-2 lg:py-3 py-2 xl:text-lg lg:text-base sm570:text-sm text-[9px] ${bebas.className}`}>
+<div className={` text-white absolute z-20 w-fit whitespace-nowrap bottom-0 right-0 bg-gradient-to-l from-bluePry to-[#5E6EFF] lg890md:rounded-tl-3xl rounded-tl-2xl 1xl:px-8 lg:px-5 sm450:px-3 px-2 lg:pt-3 pt-2 lg:pb-3 pb-1 xl:text-lg lg:text-base sm570:text-sm text-[9px] ${bebas.className}`}>
   MARKET CAP 19K
   <div style={{maskImage:"linear-gradient(90deg, transparent, black)"}} className=" border-2 border-[#A0D2FF] w-full h-full absolute top-0 left-0 z-0 lg890md:rounded-tl-3xl rounded-tl-2xl lg890md:rounded-br-3xl rounded-br-2xl bg-transparent"></div>
 </div>

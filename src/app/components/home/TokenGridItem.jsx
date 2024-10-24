@@ -34,7 +34,7 @@ const TokenGridItem = ({data}) => {
 </Link>
 {/* DESCRIPTION */}
 <Link href={`/token/${data?.token_address}`}>
-<p className={`${mont.className} lg:text-[10px] text-[8px] text-white/20 relative z-10 sm570:px-4 px-2 font-bold my-2 mb-16`}>{data.properties.meta.description}</p>
+<p className={`${mont.className} lg:text-[10px] text-[8px] text-white/20 relative z-10 sm570:px-4 px-2 font-bold my-2 md:mb-16 mb-10`}>{data.properties.meta.description}</p>
 </Link>
 {/* SOCIALS */}
 <div className=" w-1/2 sm570:px-4 sm450:px-2 px-4 sm570:py-3 py-2 flex justify-between items-center gap-1 absolute bottom-0 left-0 z-10">

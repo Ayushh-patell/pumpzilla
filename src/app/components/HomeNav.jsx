@@ -41,8 +41,16 @@ const HomeNav = () => {
             gsap.to('#navMovingBar', {top:`${topPercent}%`, opacity:1});
           }
           else {
-            let rightPercent = currNav===0?86.5:60.5;
-            gsap.to('#navMovingBar', {right:`${rightPercent}%`, opacity:1});
+            if(currNav===0) {
+              let homeIcon = document.getElementById('homeIcon').getBoundingClientRect();
+              let rightPercent = ((homeIcon.right/window.innerWidth)*100).toFixed(1)
+              gsap.to('#navMovingBar', {right:`${100.1-rightPercent}%`, opacity:1});
+            }
+            else {
+              let launchIcon = document.getElementById('launchIcon').getBoundingClientRect();
+              let rightPercent = ((launchIcon.right/window.innerWidth)*100).toFixed(1)
+              gsap.to('#navMovingBar', {right:`${99-rightPercent}%`, opacity:1});
+            }
           }
         }
       }
@@ -51,14 +59,14 @@ const HomeNav = () => {
     return (
     <nav className={` flex justify-center md:flex-col items-center gap-6 w-full md:h-auto h-full relative ${mont.className}`}>
     <div onClick={()=>{setcurrNav(0);router.push('/')}} className={` cursor-pointer h-8 w-full flex justify-center items-center relative group/nav`}>
-        <Image src={'/Home.png'} width={30} height={30} className={` sm:size-5 size-4 ${currNav===1 || currNav===2?" opacity-100":" opacity-0"} transition-all duration-200 `} alt="Home"/>
+        <Image id='homeIcon' src={'/Home.png'} width={30} height={30} className={` sm:size-5 size-4 ${currNav===1 || currNav===2?" opacity-100":" opacity-0"} transition-all duration-200 `} alt="Home"/>
         <Image src={'/home-active.png'} width={30} height={30} className={` sm:size-5 size-4 absolute z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 ${currNav===0?" opacity-100":" opacity-0"} transition-all duration-200 `} alt="Home"/>
 
         {/* POPUP */}
         <div className=' absolute top-1/2 left-full px-2 py-1 rounded-md font-bold text-[10px] pointer-events-none bg-[#1B1C1E] text-white opacity-0 translate-x-0 -translate-y-1/2 group-hover/nav:opacity-100 group-hover/nav:translate-x-2 transition-all duration-300 ease-out'>Home</div>
     </div>
     <div onClick={()=>{setcurrNav(1);router.push('/?launch=true')}} className={` cursor-pointer h-8 w-full flex justify-center items-center relative group/nav`}>
-        <Image src={'/Launch.png'} width={30} height={30} className={` sm:size-5 size-4 ${currNav===0 || currNav===2?" opacity-100":" opacity-0"} transition-all duration-200  `} alt="Launch"/>
+        <Image id='launchIcon' src={'/Launch.png'} width={30} height={30} className={` sm:size-5 size-4 ${currNav===0 || currNav===2?" opacity-100":" opacity-0"} transition-all duration-200  `} alt="Launch"/>
         <Image src={'/launch-active.png'} width={30} height={30} className={` sm:size-5 size-4 absolute z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 ${currNav===1?" opacity-100":" opacity-0"} transition-all duration-200 `} alt="Launch"/>
 
         {/* POPUP */}

@@ -92,7 +92,7 @@ body::-webkit-scrollbar {
 }
 .formInput[data-name='TOKEN DESCRIPTION'].active::before {
   background: linear-gradient(90deg, #FF4672 0%, #B872FF 100%);
-  transform: translate3d(0px, 0px, 0) scaleY(1.04) scaleX(1.010); /* Slight scaling for effect */
+  transform: translate3d(0px, 0px, 0) scaleY(1.06) scaleX(1.010); /* Slight scaling for effect */
   opacity: 1; /* Ensure it's a valid number, not `var(0.7)` */
 }
 
@@ -113,3 +113,10 @@ body::-webkit-scrollbar {
   border-radius: inherit;
 }
       
+@media screen and (max-height:'650px') {
+  .formInput[data-name='TOKEN DESCRIPTION'].active::before {
+    background: linear-gradient(90deg, #FF4672 0%, #B872FF 100%);
+    transform: translate3d(0px, 0px, 0) scaleY(1.10) scaleX(1.010); /* Slight scaling for effect */
+    opacity: 1; /* Ensure it's a valid number, not `var(0.7)` */
+  }
+}

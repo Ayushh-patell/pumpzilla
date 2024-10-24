@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
       >
 
     <TopNav/>
-      <aside className=" fixed z-40 md:top-0 bottom-0 left-0 md:h-dvh sm570:h-20 h-12 md:w-16 w-screen md:pt-40 md:pb-4 pb-2 md:px-0 px-3 bg-darkPry flex justify-center items-center">
+      <aside className=" fixed z-40 md:top-0 bottom-0 left-0 md:h-dvh h-12 md:w-16 w-screen md:pt-40 md:pb-4 pb-2 md:px-0 px-3 bg-darkPry flex justify-center items-center">
         <HomeNavWrapper/>
       </aside>
         {children}

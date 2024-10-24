@@ -84,7 +84,7 @@ const LaunchScreen = () => {
                   <Image src={'/pencil.png'} alt="edit" width={40} height={40} className="xl:size-7 sm570:size-5 size-2" />
                 </button>
               </div>
-              <div className=' w-full flex md:flex-col sm570:flex-row flex-col justify-center items-center sm570:gap-4 gap-0'>
+              <div className=' w-full flex md:flex-col sm570:flex-row flex-col justify-center items-center sm570:gap-4 gap-0 sm570:px-0 px-4'>
               <LaunchInput DebounceChange={DebounceChange} bgClr={'#1B1C1E'} font={'beat'} name={'TOKEN NAME'} required={true} type={'text'} />
               <LaunchInput DebounceChange={DebounceChange} bgClr={'#1B1C1E'} font={'beat'} name={'TOKEN SYMBOL'} required={true} type={'text'} />
               </div>

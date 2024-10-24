@@ -26,7 +26,7 @@ const TopNav = () => {
       {/* SEARCH */}
       <div className=" md:w-[30%] sm570:w-[50%] sm450:w-[30%] w-[35%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
       <Image src={"/search.svg"} alt="search icon" width={40} height={40} className=" sm450:size-6 size-4 absolute z-10 cursor-pointer pointer-events-none top-1/2 sm450:left-3 left-2 -translate-y-1/2"/>
-        <input type="text" placeholder="Search for tokens" className={` w-full bg-blackPry rounded-xl text-white md:text-base text-sm placeholder:text-white/25 outline-none focus:outline-bluePry sm450:px-12 px-6 py-2 font-bold ${mont.className}`}/>
+        <input type="text" placeholder="Search for tokens" className={` w-full bg-blackPry rounded-xl text-white md:text-base sm:text-sm text-xs placeholder:text-white/25 outline-none focus:outline-bluePry sm450:px-12 px-6 sm450:pr-6 pr-2 py-2 font-bold ${mont.className}`}/>
       </div>
       {/* SEARCH END */}
 

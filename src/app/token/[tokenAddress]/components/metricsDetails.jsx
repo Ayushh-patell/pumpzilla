@@ -27,10 +27,10 @@ const MetricsDetails = ({tokenData}) => {
   }
   
   return (
-    <div className="detailDiv rounded-3xl bg-darkPry p-4 relative overflow-hidden h-72 pt-14">
+    <div className="detailDiv lg890md:rounded-3xl rounded-2xl bg-darkPry p-4 relative overflow-hidden xl:h-72 lg890md:h-60 h-52 pt-14">
     <TopHeading text={'METRICS'}/>
-    <div className=' flex flex-col justify-between items-center w-full h-full text-lg'>
-      <div className={` w-full flex justify-between items-center py-2 ${bebas.className} text-white`}>
+    <div className=' flex flex-col justify-between items-center w-full h-full lg:text-lg text-sm'>
+      <div className={` w-full flex justify-between items-center xl:py-2 py-1 ${bebas.className} text-white`}>
         <p>24H</p>
         <p className=' bg-gradient-to-r to-[#5E6EFF] from-bluePry bg-clip-text text-transparent '>
           {
@@ -40,19 +40,19 @@ const MetricsDetails = ({tokenData}) => {
           }%
         </p>
       </div>
-      <div className={` w-full flex justify-between items-center py-2 ${bebas.className} text-white`}>
+      <div className={` w-full flex justify-between items-center xl:py-2 py-1 ${bebas.className} text-white`}>
         <p>PRICE</p>
         <p className=' bg-gradient-to-r to-[#5E6EFF] from-bluePry bg-clip-text text-transparent '>0.000013 ETH</p>
       </div>
-      <div className={` w-full flex justify-between items-center py-2 ${bebas.className} text-white`}>
+      <div className={` w-full flex justify-between items-center xl:py-2 py-1 ${bebas.className} text-white`}>
         <p>VIRTUAL LIQUIDITY</p>
         <p className=' bg-gradient-to-r to-[#5E6EFF] from-bluePry bg-clip-text text-transparent '>$ 11.4K</p>
       </div>
-      <div className={` w-full flex justify-between items-center py-2 ${bebas.className} text-white`}>
+      <div className={` w-full flex justify-between items-center xl:py-2 py-1 ${bebas.className} text-white`}>
         <p>24H VOLUME</p>
         <p className=' bg-gradient-to-r to-[#5E6EFF] from-bluePry bg-clip-text text-transparent '>961.29 ETH</p>
       </div>
-      <div className={` w-full flex justify-between items-center py-2 ${bebas.className} text-white`}>
+      <div className={` w-full flex justify-between items-center xl:py-2 py-1 ${bebas.className} text-white`}>
         <p>TOKEN CREATED</p>
         <p className=' bg-gradient-to-r to-[#5E6EFF] from-bluePry bg-clip-text text-transparent '>{timeAgo(tokenData.properties.meta.launchTime)}</p>
       </div>

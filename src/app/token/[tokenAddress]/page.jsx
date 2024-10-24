@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import GridDetails from "./GridDetails";
-import BottomDetails from "./components/bottomSection/bottomDetails";
+import BottomSectionWIthGraphicalSec from "./BottomSectionWIthGraphicalSec";
 
 export const metadata = {
   title: "PumpZilla | Token",
@@ -26,9 +26,10 @@ const Page = async ({ params }) => {
     const tokenData = await response.json();
 
     return (
-      <main className="pt-24 pl-20 pr-4 pb-4 w-screen">
+      <main className="md:pt-24 pt-16 md:pl-20 pl-4 pr-4 md:pb-4 pb-16 w-screen">
         <GridDetails tokenData={tokenData} />
-        <BottomDetails/>
+
+        <BottomSectionWIthGraphicalSec/>
       </main>
     );
   } catch (error) {

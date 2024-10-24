@@ -34,7 +34,7 @@ const BottomDetails = () => {
         </div>
             
 
-      <Image src={'/city.png'} alt="city" width={400} height={200} className=" pointer-events-none max-w-none left-0 top-0 w-full h-full absolute z-0 object-cover object-top mix-blend-color-dodge"/>
+      <Image src={'/city.png'} alt="city" width={400} height={200} className="bgImgPart pointer-events-none max-w-none left-0 top-0 w-full h-full absolute z-0 object-cover object-top mix-blend-color-dodge"/>
     </div>
   )
 }

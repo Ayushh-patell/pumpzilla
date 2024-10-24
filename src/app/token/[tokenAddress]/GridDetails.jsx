@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import BasicDetails from './components/basicDetails';
 import MetricsDetails from './components/metricsDetails';
 import GraphicDetails from './components/graphicDetails';
@@ -33,17 +33,29 @@ const GridDetails = ({tokenData}) => {
         
     },[])
 
+
+
     return (
-    <div id="ImgBg" className=" w-full relative">
-    <div className='flex justify-center items-center gap-4 '>
-    <div id='relativeHeightDiv' className=" w-3/4 grid grid-cols-3 gap-4 z-0">
+    <div id="ImgBg" className=" w-full relative z-10">
+    <div className='flex md:flex-row flex-col justify-center items-center lg890md:gap-4 gap-2 '>
+    <div id='relativeHeightDiv' className=" md:w-3/4 w-full grid md:grid-cols-3 grid-cols-2 lg890md:gap-4 gap-2 z-0">
         <BasicDetails tokenData={tokenData}/>
         <MetricsDetails tokenData={tokenData}/>
+        <div className='col-span-3 md:block hidden'>
         <GraphicDetails/>
-    </div>
-    <div id='rightDiv' className=" w-1/4 flex flex-col justify-center items-center gap-4 z-0">
-        <BuySellDetails tokenData={tokenData}/>
+        </div>
+        <div className=' md:hidden block'>
         <HolderDetails/>
+        </div>
+        <div className=' md:hidden block col-span-2'>
+        <BuySellDetails tokenData={tokenData}/>
+        </div>
+    </div>
+    <div id='rightDiv' className=" md:w-1/4 w-full md:flex hidden flex-col justify-center items-center lg890md:gap-4 gap-2 z-0">
+        <BuySellDetails tokenData={tokenData}/>
+        <div className=' w-full md:block hidden'>
+        <HolderDetails/>
+        </div>
     </div>
     </div>
     

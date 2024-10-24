@@ -33,11 +33,11 @@ const BuySellDetails = ({tokenData}) => {
   }
   return (
 <>
-<div className="detailDiv w-full rounded-2xl bg-darkPry p-4 relative overflow-hidden h-[55%]">
+<div className="detailDiv w-full lg890md:rounded-3xl rounded-2xl bg-darkPry p-4 relative overflow-hidden md:h-[55%]">
     {/* BUY/SELL BUTTON */}
-       <div className=' flex justify-center items-center gap-4 relative z-10'>
-        <button onClick={() => setisBuy(true)} className={`${isBuy? " text-white bg-gradient-to-r from-bluePry to-[#5E6EFF]":" text-white/30 bg-[#2C2D30]"} rounded-2xl ${mont.className} font-extrabold py-2 px-4 w-1/2`} style={{boxShadow:"4px 4px 10px rgba(0,0,0,0.4)"}}>BUY</button>
-        <button onClick={() => setisBuy(false)} className={`${!isBuy? " text-white bg-gradient-to-r from-bluePry to-[#5E6EFF]":" text-white/30 bg-[#2C2D30]"} rounded-2xl ${mont.className} font-extrabold py-2 px-4 w-1/2`} style={{boxShadow:"4px 4px 10px rgba(0,0,0,0.4)"}}>SELL</button>
+       <div className=' flex justify-center items-center gap-4 relative z-10 lg890md:text-base text-sm'>
+        <button onClick={() => setisBuy(true)} className={`${isBuy? " text-white bg-gradient-to-r from-bluePry to-[#5E6EFF]":" text-white/30 bg-[#2C2D30]"} rounded-2xl ${mont.className} font-extrabold lg890md:py-2 py-1 lg890md:px-4 px-2 w-1/2`} style={{boxShadow:"4px 4px 10px rgba(0,0,0,0.4)"}}>BUY</button>
+        <button onClick={() => setisBuy(false)} className={`${!isBuy? " text-white bg-gradient-to-r from-bluePry to-[#5E6EFF]":" text-white/30 bg-[#2C2D30]"} rounded-2xl ${mont.className} font-extrabold lg890md:py-2 py-1 lg890md:px-4 px-2 w-1/2`} style={{boxShadow:"4px 4px 10px rgba(0,0,0,0.4)"}}>SELL</button>
        </div> 
        {/* SETTING */}
        <div className=' flex justify-end items-center py-3'>
@@ -50,19 +50,19 @@ const BuySellDetails = ({tokenData}) => {
         <Image src={`https://ipfs.io/ipfs/${tokenData.properties.meta.image}`} alt='ETH' width={30} height={30} className={` ${isBuy && " hidden"} size-7 rounded-full absolute z-10 pointer-events-none top-1/2 -translate-y-1/2 right-3`}/>
        </div>
       {/* BONDING CURVE BAR */}
-      <div className=' w-full py-3 relative z-20'>
+      <div className=' w-full xl:py-3 lg890md:py-2 py-1 relative z-20'>
         <div className=' w-full relative h-2 rounded-full bg-[#2c2d2f]'>
           <div aria-hidden className=' pointer-events-none absolute top-0 left-0 h-full w-3/4 bg-gradient-to-r from-[#B872FF] to-[#5E6EFF] rounded-full'/>
         </div>
-        <p className=' flex justify-between items-center'>
+        <p className=' flex justify-between items-center lg890md:text-base text-xs'>
           <span className={` ${bebas.className} text-white`}>BONDING CURVE PROGRESS</span>
           <span className={` bg-gradient-to-r to-[#BB72FF] from-[#5E6EFF] bg-clip-text text-transparent ${mont.className} font-bold`}>75 %</span>
         </p>
       </div>
       {/* INFO */}
-      <div className={` w-full rounded-3xl p-4 bg-blackPry ${bebas.className} relative z-10 text-center`}>
+      <div className={` w-full rounded-3xl lg:text-base text-xs xl:p-4 p-2 bg-blackPry ${bebas.className} relative z-10 text-center`}>
       <p>There are <span className=' bg-gradient-to-r from-[#646EFF] to-[#B471FF] bg-clip-text text-transparent'>676,991,162.93</span> PROMOTION tokens and <span className=' bg-gradient-to-r from-[#525dff] to-[#535fff] bg-clip-text text-transparent'>4,546.3</span> ETH still available in the bonding curve for sale.</p>
-      <p> When the <span className=' bg-gradient-to-r from-[#646EFF] to-[#9570FF] bg-clip-text text-transparent'>Market cap</span> reaches <span className=' bg-gradient-to-r from-[#B872FF] to-[#B871FE] bg-clip-text text-transparent'>$77,296.81</span>, all the liquidity from the bonding curve will be moved to UNISWAP and <span className=' bg-gradient-to-r from-[#646EFF] to-[#8F6FFE] bg-clip-text text-transparent'>locked</span>. <span className=' bg-gradient-to-r from-[#FF4A6A] to-[#E40CC9] bg-clip-text text-transparent'>The process speeds up as the price increases</span>.</p>
+      <p> When the <span className=' bg-gradient-to-r from-[#646EFF] to-[#9570FF] bg-clip-text text-transparent'>Market cap</span> reaches <span className=' bg-gradient-to-r lg:from-[#B872FF] from-[#3e4bff] lg:to-[#B871FE] to-[#646EFF] bg-clip-text text-transparent'>$77,296.81</span>, all the liquidity from the bonding curve will be moved to UNISWAP and <span className=' bg-gradient-to-r from-[#646EFF] to-[#8F6FFE] bg-clip-text text-transparent'>locked</span>. <span className=' bg-gradient-to-r from-[#FF4A6A] to-[#E40CC9] bg-clip-text text-transparent'>The process speeds up as the price increases</span>.</p>
       </div>
       {/* FINAL BUTTON */}
     <div className=' w-full flex justify-center items-center py-2'>
@@ -72,8 +72,8 @@ const BuySellDetails = ({tokenData}) => {
      </div>
 
      {/* SETTINGS MODAL POPUP */}
-     <div id='SettingsModalWrapper' className=' hidden pointer-events-none font-beat fixed z-40 top-0 left-0 w-screen h-dvh justify-center items-center bg-black/70'>
-      <div id='SettingsModal' className=' scale-50 w-1/2 rounded-3xl border-2 border-black bg-[#24262B] relative p-4'>
+     <div id='SettingsModalWrapper' className=' hidden pointer-events-none font-beat fixed z-50 top-0 left-0 w-screen h-dvh justify-center items-center bg-black/70'>
+      <div id='SettingsModal' className=' scale-50 lg890md:w-1/2 w-3/4 rounded-3xl border-2 border-black bg-[#24262B] relative p-4'>
         <div className=' relative w-full flex justify-between items-center'>
           <p className=' relative z-10 bg-gradient-to-r from-[#5E6EFF] to-bluePry bg-clip-text text-transparent font-beat text-3xl'>SET MAX SLIPPAGE %</p>
           <p id='slippagetextBorder' className=' absolute z-0 top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-[#5E6EFF] to-bluePry bg-clip-text text-transparent font-beat text-3xl pointer-events-none'>SET MAX SLIPPAGE %</p>

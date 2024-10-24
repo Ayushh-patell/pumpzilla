@@ -5,10 +5,10 @@ import { bebas } from '@/app/layout'
 
 const HolderDetails = () => {
   return (
-    <div className="detailDiv w-full rounded-2xl bg-darkPry p-4 pt-14 relative overflow-hidden h-[45%]">
+    <div className="detailDiv w-full lg890md:rounded-3xl rounded-2xl bg-darkPry md:p-4 p-2 md:pt-14 pt-10 relative overflow-hidden md:h-[45%] h-52">
       <TopHeading text={'HOLDER DISTRIBUTION'}/>
 
-      <div className={` h-full overflow-scroll w-full flex flex-col items-center justify-between gap-2 text-lg ${bebas.className}`}>
+      <div className={` h-full overflow-scroll w-full flex flex-col items-center justify-between lg890md:gap-2 lg:text-lg text-sm ${bebas.className}`}>
         <div className=' w-full flex justify-between items-center py-1'>
           <p>0bc...fws</p>
           <p><span className=' bg-gradient-to-r to-[#5E6EFF] from-bluePry bg-clip-text text-transparent'>20.6 %</span> <span className=' text-white'>(BONDING CURVE)</span></p>

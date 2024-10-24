@@ -16,7 +16,7 @@ const LaunchTextArea = ({name, font, bgClr, required, type, DebounceChange}) => 
     },[])
 
   return (
-    <div data-name={`${name}`} className={` w-full ${Hsmall?" md:h-[13dvh] h-[10dvh]":"md:h-[20dvh] h-[10dvh]"} relative rounded-2xl md:my-3 my-0 md:mb-3 mb-2 formInput ${isFocus? 'active':''}`} style={{backgroundColor:`${bgClr}`}}>
+    <div data-name={`${name}`} className={` w-full ${Hsmall?" md:h-[13dvh] h-[10dvh]":"md:h-[20dvh] h-[10dvh]"} relative rounded-2xl md:my-3 my-0 md:mb-3 sm570:mb-2 mb-0 formInput ${isFocus? 'active':''}`} style={{backgroundColor:`${bgClr}`}}>
     {font==="beat"? 
     <> 
         <textarea cols="30" onFocus={() => setisFocus(true)} onBlur={() => setisFocus(false)} onChange={(e) => DebounceChange(name, e.target.value)} required={required} type={type} className=" h-full outline-none w-full relative z-10 rounded-[15px] md:text-xl text-base p-3 md:pt-8 pt-6 font-beat" style={{backgroundColor:`${bgClr}`}} />

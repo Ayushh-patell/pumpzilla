@@ -50,7 +50,7 @@ const BuySellDetails = ({tokenData}) => {
         <Image src={`https://ipfs.io/ipfs/${tokenData.properties.meta.image}`} alt='ETH' width={30} height={30} className={` ${isBuy && " hidden"} size-7 rounded-full absolute z-10 pointer-events-none top-1/2 -translate-y-1/2 right-3`}/>
        </div>
       {/* BONDING CURVE BAR */}
-      <div className=' w-full xl:py-3 lg890md:py-2 sm:py-1 py-2 relative z-20'>
+      <div className=' w-full xl:py-3 lg890md:py-2 sm:py-1 py-3 relative z-20'>
         <div className=' w-full relative h-2 rounded-full bg-[#2c2d2f]'>
           <div aria-hidden className=' pointer-events-none absolute top-0 left-0 h-full w-3/4 bg-gradient-to-r from-[#B872FF] to-[#5E6EFF] rounded-full'/>
         </div>

@@ -17,11 +17,11 @@ const BottomDetails = () => {
       }
       else {
         gsap.to('#bottomCommentSection', {translateX:'-100%'});
-        gsap.to('#bottomHistorySection', {translateX:'-100%'});
+        gsap.to('#bottomHistorySection', {translateX:'-102%'});
       }
     },[commentsSelected])
   return (
-    <div className=" detailDiv rounded-3xl bg-darkPry p-4 px-8 mt-4 relative w-full h-[600px] overflow-hidden">
+    <div className=" detailDiv rounded-3xl bg-darkPry p-4 md:px-8 px-4 mt-4 relative w-full h-[600px] overflow-hidden">
         <button onClick={() => setcommentsSelected(true)} className=' absolute top-0 left-0'>
         <TopHeading text={'COMMENTS'} active={commentsSelected} isLeft={true}/>
         </button>

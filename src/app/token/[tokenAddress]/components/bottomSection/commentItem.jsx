@@ -28,13 +28,13 @@ const CommentItem = ({ data }) => {
       <CommentHeading text={data.text} />
       <div className=" w-full flex justify-end items-center">
         <p
-          className={`${mont.className} font-extrabold bg-gradient-to-r from-bluePry to-[#5E6EFF] bg-clip-text text-transparent`}
+          className={`${mont.className} font-extrabold bg-gradient-to-r from-bluePry to-[#5E6EFF] bg-clip-text text-transparent md:text-base text-[10px]`}
         >
           {timeAgo(data.time)}
         </p>
       </div>
 
-      <p className={` w-full text-white ${mont.className} font-extrabold`}>
+      <p className={` w-full text-white ${mont.className} font-extrabold md:text-base text-xs`}>
         {data.comment}
       </p>
     </div>

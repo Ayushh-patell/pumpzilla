@@ -24,7 +24,7 @@ const HistoryItem = ({data}) => {
       }
 
   return (
-    <div className='w-full grid grid-cols-6 p-4 text-center'>
+    <div className='w-full min-w-[770px] grid grid-cols-6 p-4 text-center'>
       <p className=' bg-gradient-to-r from-[#E309CE] to-[#FF4A6B] bg-clip-text text-transparent font-bold'>{data.account.slice(0,4) + "..." + data.account.slice(data.account.length-4, data.account.length)}</p>
       {data.type==='SELL'?
       <p className=' bg-gradient-to-r from-[#FF718B] to-[#FF2F61] bg-clip-text text-transparent font-extrabold'>{data.type}</p>

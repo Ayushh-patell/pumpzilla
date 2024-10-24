@@ -94,7 +94,7 @@ const LaunchScreen = () => {
         </div>
         <div className="md:w-1/2 w-full md:h-full h-[92%] flex justify-end items-center xl1120lg:px-14 lg:px-10 md:px-8 px-0 xl:pb-10 lg:pb-8 md:pb-6 pb-4 xl:pt-10 lg:pt-8 md:pt-6 sm570:py-12 py-6 ">
           <div className="w-full h-full">
-            <h4 className={`${mont.className} font-black text-white xl:text-4xl lg:text-3xl sm570:text-2xl text-lg w-full md:text-center sm570:text-left text-center md:pt-0 sm570:pt-1 pt-2`}>LAUNCH YOUR TOKEN !</h4>
+            <h4 className={`${mont.className} font-black text-white xl:text-4xl lg:text-3xl sm570:text-2xl text-lg w-full md:text-center sm570:text-left text-center md:pt-0 sm570:pt-1 pt-3`}>LAUNCH YOUR TOKEN !</h4>
             <p className={`bg-gradient-to-r from-[#4EA5FF] to-[#B972FF] bg-clip-text text-transparent ${mont.className} font-medium xl:py-2 py-0 pb-3 md:text-center sm570:text-left text-center xl:text-base lg:text-sm sm570:text-xs text-[10px]`}>No presale, No Team Allocation, Lower Gas</p>
             <div className=' w-full flex justify-center items-center md:gap-0 gap-2 md:flex-col sm570:flex-row flex-col'>
             <LaunchTextArea DebounceChange={DebounceChange} bgClr={'#111111'} font={'bebas'} name={'TOKEN DESCRIPTION'} required={false} type={'text'} />

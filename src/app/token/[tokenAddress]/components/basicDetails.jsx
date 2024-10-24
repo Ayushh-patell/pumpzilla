@@ -24,19 +24,19 @@ const BasicDetails = ({tokenData}) => {
 
             <div className=' flex justify-center items-center gap-3 xl:pt-2 pt-1'>
                 <Link href={tokenData.properties.meta.external_url}>
-                    <button className=' flex justify-center items-center gap-2 bg-gradient-to-r from-[#5E6EFF] to-bluePry rounded-xl p-1 lg:px-4 px-2 lg:text-base lg890md:text-sm text-[10px]'>
+                    <button className=' flex justify-center items-center gap-2 bg-gradient-to-r from-[#5E6EFF] to-bluePry md:rounded-xl rounded-md p-1 lg:px-4 px-2 lg:text-base lg890md:text-sm text-[10px]'>
                         <Image src={'/web.png'} alt='website' width={20} height={20} className=' lg:size-5 size-3 object-contain object-center'/>
                         <span className={`${bebas.className}`}>WEBSITE</span>
                     </button>
                 </Link>
                 <Link href={tokenData.properties.meta.social_media.twitter}>
-                    <button className=' flex justify-center items-center gap-2 bg-gradient-to-r from-[#5E6EFF] to-bluePry rounded-xl p-1 lg:px-4 px-2 lg:text-base lg890md:text-sm text-[10px]'>
+                    <button className=' flex justify-center items-center gap-2 bg-gradient-to-r from-[#5E6EFF] to-bluePry md:rounded-xl rounded-md p-1 lg:px-4 px-2 lg:text-base lg890md:text-sm text-[10px]'>
                         <Image src={'/twitter.png'} alt='website' width={20} height={20} className=' lg:size-5 size-3 object-contain object-center'/>
                         <span className={`${bebas.className}`}>TWITTER</span>
                     </button>
                 </Link>
                 <Link href={tokenData.properties.meta.social_media.telegram}>
-                    <button className=' flex justify-center items-center gap-2 bg-gradient-to-r from-[#5E6EFF] to-bluePry rounded-xl p-1 lg:px-4 px-2 lg:text-base lg890md:text-sm text-[10px]'>
+                    <button className=' flex justify-center items-center gap-2 bg-gradient-to-r from-[#5E6EFF] to-bluePry md:rounded-xl rounded-md p-1 lg:px-4 px-2 lg:text-base lg890md:text-sm text-[10px]'>
                         <Image src={'/telegram.png'} alt='website' width={20} height={20} className=' lg:size-5 size-3 object-contain object-center'/>
                         <span className={`${bebas.className}`}>TELEGRAM</span>
                     </button>

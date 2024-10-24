@@ -7,7 +7,7 @@ const BottomHistorySection = () => {
     
   return (
     <div id='bottomHistorySection' className={` w-full flex-shrink-0 overflow-scroll h-full pb-4 rounded-3xl shadow-2xl bg-blackPry ${mont.className}`}>
-      <div className=' min-w-[770px] w-full grid grid-cols-6 p-4 text-center rounded-t-3xl bg-[#191919] sticky top-0 left-0' style={{boxShadow:"0px 5px 10px rgba(0,0,0,0.4)"}}>
+      <div className=' min-w-[800px] w-full grid grid-cols-6 p-4 text-center rounded-t-3xl bg-[#191919] sticky top-0 left-0' style={{boxShadow:"0px 5px 10px rgba(0,0,0,0.4)"}}>
         <p className=' bg-gradient-to-b from-bluePry to-[#5E6EFF] bg-clip-text text-transparent font-extrabold'>ACCOUNT</p>
         <p className=' bg-gradient-to-b from-bluePry to-[#5E6EFF] bg-clip-text text-transparent font-extrabold'>TYPE</p>
         <p className=' bg-gradient-to-b from-bluePry to-[#5E6EFF] bg-clip-text text-transparent font-extrabold'>TRX</p>

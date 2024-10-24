@@ -100,7 +100,7 @@ const LaunchScreen = () => {
             <LaunchTextArea DebounceChange={DebounceChange} bgClr={'#111111'} font={'bebas'} name={'TOKEN DESCRIPTION'} required={false} type={'text'} />
             <LaunchInput DebounceChange={DebounceChange} bgClr={'#111111'} font={'bebas'} name={'WEBSITE'} required={false} type={'text'} />
             </div>
-            <div className="flex w-full justify-center items-center sm570:gap-2 gap-0">
+            <div className="flex w-full justify-center items-center sm570:gap-2 gap-1">
               <LaunchInput DebounceChange={DebounceChange} bgClr={'#111111'} font={'bebas'} name={'TELEGRAM'} required={false} type={'text'} />
               <LaunchInput DebounceChange={DebounceChange} bgClr={'#111111'} font={'bebas'} name={'TWITTER'} required={false} type={'text'} />
             </div>

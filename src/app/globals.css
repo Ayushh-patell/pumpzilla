@@ -120,3 +120,28 @@ body::-webkit-scrollbar {
     opacity: 1; /* Ensure it's a valid number, not `var(0.7)` */
   }
 }
+
+@media screen and (max-width:600px) {
+  .formInput[data-name='TOKEN NAME'].active::before, .formInput[data-name='TOKEN SYMBOL'].active::before {
+    background: linear-gradient(90deg, #FF4672 0%, #B872FF 100%);
+    transform: translate3d(0px, 0px, 0) scaleY(1.1) scaleX(1.015); /* Slight scaling for effect */
+    opacity: 1; /* Ensure it's a valid number, not `var(0.7)` */
+  }
+  
+  .formInput[data-name='TWITTER'].active::before, .formInput[data-name='TELEGRAM'].active::before {
+    background: linear-gradient(90deg, #FF4672 0%, #B872FF 100%);
+    transform: translate3d(0px, 0px, 0) scaleY(1.1) scaleX(1.025); /* Slight scaling for effect */
+    opacity: 1; /* Ensure it's a valid number, not `var(0.7)` */
+  }
+  
+  .formInput[data-name='WEBSITE'].active::before, .formInput[data-name='INITIAL BUY'].active::before {
+    background: linear-gradient(90deg, #FF4672 0%, #B872FF 100%);
+    transform: translate3d(0px, 0px, 0) scaleY(1.1) scaleX(1.014); /* Slight scaling for effect */
+    opacity: 1; /* Ensure it's a valid number, not `var(0.7)` */
+  }
+  .formInput[data-name='TOKEN DESCRIPTION'].active::before {
+    background: linear-gradient(90deg, #FF4672 0%, #B872FF 100%);
+    transform: translate3d(0px, 0px, 0) scaleY(1.06) scaleX(1.010); /* Slight scaling for effect */
+    opacity: 1; /* Ensure it's a valid number, not `var(0.7)` */
+  }
+}

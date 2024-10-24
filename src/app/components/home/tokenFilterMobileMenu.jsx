@@ -3,7 +3,7 @@
 import gsap from 'gsap';
 import React, { useEffect, useState } from 'react'
 
-const TokenFilterMobileMenu = ({changeUniswapListed, tokenFilters}) => {
+const TokenFilterMobileMenu = ({changeUniswapListed, tokenFilters, changeOrder}) => {
     const [openFilterMobile, setopenFilterMobile] = useState(false)
     useEffect(() => {
         if(openFilterMobile) {

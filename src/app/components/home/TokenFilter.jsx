@@ -65,7 +65,7 @@ const TokenFilter = ({tokenFilters, settokenFilters}) => {
     
     </div>
 
-    <TokenFilterMobileMenu changeUniswapListed={changeUniswapListed} tokenFilters={tokenFilters}/>
+    <TokenFilterMobileMenu changeUniswapListed={changeUniswapListed} tokenFilters={tokenFilters} changeOrder={changeOrder}/>
 </div> 
   )
 }
